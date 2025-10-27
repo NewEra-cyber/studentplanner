@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+
+{% block title %}Manage Activities - Beast Mode Planner{% endblock %}
+
+{% block extra_head %}
+<style>
+    body {
+        background: url('https://c4.wallpaperflare.com/wallpaper/279/803/660/digital-art-cgi-render-simple-background-wallpaper-preview.jpg') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+    }
+    
+    /* Add an overlay to improve text readability */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Dark overlay for better contrast */
+        z-index: 1;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 relative z-10">
+    <!-- Header -->
+    <div class="glass-panel p-6 mb-8">
+        <h1 class="text-3xl font-bold terminal-header mb-2">Your Scheduled Activities</h1>
+        <p class="terminal-text">View and manage all your activities across all days</p>
+    </div>
+
+    <!-- Activities by Day -->
+    <div class="space-y-6">
+        {% for day in days_order %}
+            {% if day in activities_by_day %}
+            <div class="glass-panel">
+                <div class="p-6 border-b border-gray-800">
+                    <h2 class="text-xl font-semibold terminal-header flex items-center">
+                        <i class="fas fa-calendar-day mr-3 text-blue-400"></i>
+                        {{ day }}
+                    </h2>
+                </div>
+                
+                <div class="divide-y divide-gray-800">
+                    {% with day_activities=activities_by_day|get_item:day %}
+                    {% for activity in day_activities %}
+                    <div class="p-6 hover:bg-black/30 transition-colors">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-4 flex-1">
+                                <div class="w-24 text-center">
+                                    <span class="font-bold terminal-text">{{ activity.start_time|time:"H:i" }}</span>
+                                    <span class="block text-sm text-gray-500">{{ activity.end_time|time:"H:i" }}</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-semibold terminal-text">{{ activity.title }}</p>
+                                    <p class="text-sm text-gray-400 mt-1 flex items-center">
+                                        <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+                                        {{ activity.location|default:"No location specified" }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="inline-block px-3 py-1 rounded-full text-sm font-medium badge-{{ activity.activity_type }}">
+                                    {{ activity.get_activity_type_display }}
+                                </span>
+                                <!-- Activity Button -->
+                                <button onclick='openActivityResources("{{ activity.activity_type }}", "{{ activity.title }}")' 
+                                        class="btn-neon font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Resources
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endwith %}
+                </div>
+            </div>
+            {% endif %}
+        {% empty %}
+        <div class="glass-panel text-center py-12">
+            <i class="fas fa-calendar-plus text-6xl text-gray-500 mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-400 mb-2">No activities scheduled yet</h3>
+            <p class="text-gray-500">Start by adding some activities to your schedule!</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+function openActivityResources(activityType, activityTitle) {
+    // Scroll to resources page and highlight relevant category
+    window.location.href = "{% url 'activities_resources' %}";
+    
+    // This will be handled by the resources page JavaScript
+    localStorage.setItem('scrollToActivity', activityType);
+    localStorage.setItem('activityTitle', activityTitle);
+}
+</script>
+{% endblock %}

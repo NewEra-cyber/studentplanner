@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ resource.name }} - Beast Mode Planner{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Back button -->
+        <a href="{% url 'activities_resources' %}" class="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Resources
+        </a>
+
+        <!-- Resource Header -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+            <div class="flex justify-between items-start mb-4">
+                <div class="flex items-center">
+                    <span class="text-4xl mr-4">{{ resource.icon }}</span>
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">{{ resource.name }}</h1>
+                        <p class="text-gray-600 mt-2">{{ resource.description }}</p>
+                    </div>
+                </div>
+                <button id="favorite-btn" class="favorite-btn text-2xl {% if user_pref.is_favorite %}text-yellow-500{% else %}text-gray-400{% endif %}"
+                        onclick="toggleFavorite('{{ resource.id }}')">
+                    <i class="{% if user_pref.is_favorite %}fas{% else %}far{% endif %} fa-star"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div class="text-center">
+                    <p class="text-sm text-gray-500">Type</p>
+                    <p class="font-semibold">{{ resource.get_resource_type_display }}</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-500">Category</p>
+                    <p class="font-semibold" style="color: {{ resource.category.color }};">{{ resource.category.name }}</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-500">Price</p>
+                    <p class="font-semibold {{ resource.is_free|yesno:'text-green-600,text-gray-600' }}">
+                        {{ resource.is_free|yesno:"Free,Paid" }}
+                    </p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-500">Usage</p>
+                    <p class="font-semibold">{{ resource.usage_count }} times</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="{{ resource.url }}" target="_blank" 
+               class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center transition-colors">
+                <i class="fas fa-external-link-alt mr-2"></i>
+                Visit Website
+            </a>
+            <button onclick="copyToClipboard('{{ resource.url }}')" 
+                    class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center transition-colors">
+                <i class="fas fa-copy mr-2"></i>
+                Copy Link
+            </button>
+        </div>
+
+        <!-- Similar Resources -->
+        {% if similar_resources %}
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Similar Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {% for similar in similar_resources %}
+                <a href="{% url 'resource_detail' similar.id %}" 
+                   class="resource-card bg-gray-50 rounded-lg border border-gray-200 p-4 hover:border-{{ similar.category.color|slice:"1:" }}300 transition-colors">
+                    <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-3">{{ similar.icon }}</span>
+                        <h3 class="font-semibold text-gray-900">{{ similar.name }}</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">{{ similar.description|truncatewords:10 }}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs px-2 py-1 rounded-full {{ similar.is_free|yesno:'bg-green-100 text-green-800, bg-gray-100 text-gray-800' }}">
+                            {{ similar.is_free|yesno:"Free,Paid" }}
+                        </span>
+                        <span class="text-xs text-gray-500">{{ similar.get_resource_type_display }}</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+async function toggleFavorite(resourceId) {
+    const button = document.getElementById('favorite-btn');
+    const icon = button.querySelector('i');
+    
+    try {
+        const response = await fetch(`/resources/${resourceId}/toggle-favorite/`, {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        });
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+            if (data.is_favorite) {
+                icon.className = 'fas fa-star';
+                button.classList.remove('text-gray-400');
+                button.classList.add('text-yellow-500');
+            } else {
+                icon.className = 'far fa-star';
+                button.classList.remove('text-yellow-500');
+                button.classList.add('text-gray-400');
+            }
+        }
+    } catch (error) {
+        console.error('Error toggling favorite:', error);
+    }
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        // Show success message
+        const button = event.target;
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+        button.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+        button.classList.add('bg-green-600', 'hover:bg-green-700');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('bg-green-600', 'hover:bg-green-700');
+            button.classList.add('bg-gray-600', 'hover:bg-gray-700');
+        }, 2000);
+    });
+}
+</script>
+{% endblock %}

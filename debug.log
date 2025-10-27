@@ -1,0 +1,1237 @@
+INFO 2025-10-17 17:30:40,491 autoreload 16976 17044 Watching for file changes with StatReloader
+INFO 2025-10-17 17:37:06,723 autoreload 16976 17044 C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\pytz\exceptions.py changed, reloading.
+INFO 2025-10-17 17:37:08,319 autoreload 36524 26460 Watching for file changes with StatReloader
+INFO 2025-10-17 17:37:14,519 autoreload 36524 26460 C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py changed, reloading.
+INFO 2025-10-17 18:08:43,404 autoreload 24776 16584 Watching for file changes with StatReloader
+INFO 2025-10-19 00:00:00,163 autoreload 28056 26416 Watching for file changes with StatReloader
+INFO 2025-10-19 00:01:05,025 autoreload 39696 25940 Watching for file changes with StatReloader
+INFO 2025-10-19 00:13:01,980 autoreload 39696 25940 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-19 00:13:04,006 autoreload 44484 36164 Watching for file changes with StatReloader
+INFO 2025-10-19 00:13:27,669 autoreload 44484 36164 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-19 00:13:29,282 autoreload 25800 17344 Watching for file changes with StatReloader
+INFO 2025-10-19 00:19:25,149 autoreload 25800 17344 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-19 00:19:27,218 autoreload 44404 24560 Watching for file changes with StatReloader
+INFO 2025-10-19 00:26:49,613 autoreload 44404 24560 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-19 00:26:51,720 autoreload 31408 38184 Watching for file changes with StatReloader
+INFO 2025-10-19 00:31:55,800 autoreload 31408 38184 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-19 00:31:57,552 autoreload 42040 36956 Watching for file changes with StatReloader
+INFO 2025-10-19 00:32:19,174 autoreload 42040 36956 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-19 00:32:20,714 autoreload 1120 5272 Watching for file changes with StatReloader
+INFO 2025-10-19 00:32:27,497 autoreload 1120 5272 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-19 00:32:29,197 autoreload 43728 44596 Watching for file changes with StatReloader
+INFO 2025-10-19 00:32:49,008 autoreload 43728 44596 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-19 00:32:50,493 autoreload 36340 44196 Watching for file changes with StatReloader
+INFO 2025-10-19 00:33:06,740 autoreload 36340 44196 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-19 00:33:08,329 autoreload 39096 6200 Watching for file changes with StatReloader
+INFO 2025-10-19 00:33:48,089 autoreload 39096 6200 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-19 00:33:49,532 autoreload 34784 40796 Watching for file changes with StatReloader
+INFO 2025-10-19 01:07:06,545 autoreload 34784 40796 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\admin.py changed, reloading.
+INFO 2025-10-19 01:07:08,097 autoreload 6864 43304 Watching for file changes with StatReloader
+INFO 2025-10-19 01:07:28,341 autoreload 6864 43304 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\admin.py changed, reloading.
+INFO 2025-10-19 01:07:29,767 autoreload 30696 24644 Watching for file changes with StatReloader
+INFO 2025-10-19 01:14:05,309 autoreload 30696 24644 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\admin.py changed, reloading.
+INFO 2025-10-19 01:14:07,343 autoreload 33240 43932 Watching for file changes with StatReloader
+INFO 2025-10-19 01:15:37,585 autoreload 33240 43932 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\admin.py changed, reloading.
+INFO 2025-10-19 01:15:38,972 autoreload 37864 34776 Watching for file changes with StatReloader
+INFO 2025-10-19 01:18:14,546 autoreload 37864 34776 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-19 01:18:16,018 autoreload 42144 36084 Watching for file changes with StatReloader
+INFO 2025-10-19 01:20:56,743 autoreload 24184 13284 Watching for file changes with StatReloader
+ERROR 2025-10-19 01:21:09,803 log 24184 27104 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: core_jkuattimetable.is_active
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 53, in dashboard
+    today_schedule = list(jkuat_schedule) + list(personal_schedule)
+                     ~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: core_jkuattimetable.is_active
+ERROR 2025-10-19 01:21:09,874 log 24184 27104 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: user_profiles.theme
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\middleware.py", line 15, in __call__
+    profile = UserProfile.objects.get(user=request.user)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 629, in get
+    num = len(clone)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: user_profiles.theme
+ERROR 2025-10-19 01:21:09,880 basehttp 24184 27104 "GET / HTTP/1.1" 500 146696
+ERROR 2025-10-19 01:25:56,856 log 24184 7516 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 56, in _view_wrapper
+    test_pass = test_func(request.user)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 79, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ~~~~~~~~^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 333, in get_user
+    request.session.flush()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 128, in flush
+    self.delete(self.session_key)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 107, in delete
+    super().delete(session_key)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\sessions\backends\db.py", line 175, in delete
+    self.model.objects.get(session_key=session_key).delete()
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 629, in get
+    num = len(clone)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+ERROR 2025-10-19 01:25:56,865 basehttp 24184 7516 "GET / HTTP/1.1" 500 182605
+INFO 2025-10-19 01:36:59,867 autoreload 43432 30180 Watching for file changes with StatReloader
+INFO 2025-10-19 01:38:54,122 autoreload 43432 30180 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\notifications\__init__.py changed, reloading.
+INFO 2025-10-19 01:38:55,978 autoreload 2836 8136 Watching for file changes with StatReloader
+INFO 2025-10-19 01:42:18,494 autoreload 13912 39292 Watching for file changes with StatReloader
+INFO 2025-10-19 01:42:23,800 basehttp 13912 42412 "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 01:42:23,883 basehttp 13912 42412 "GET /accounts/login/?next=/ HTTP/1.1" 200 9323
+INFO 2025-10-19 01:42:32,357 basehttp 13912 42412 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-10-19 01:42:32,745 log 13912 42412 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\middleware.py", line 16, in __call__
+    profile.update_streak()
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserProfile' object has no attribute 'update_streak'
+ERROR 2025-10-19 01:42:32,749 basehttp 13912 42412 "GET / HTTP/1.1" 500 69082
+INFO 2025-10-19 01:44:51,344 autoreload 2836 8136 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\middleware.py changed, reloading.
+INFO 2025-10-19 01:44:51,345 autoreload 13912 39292 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\middleware.py changed, reloading.
+INFO 2025-10-19 01:44:53,552 autoreload 42988 24132 Watching for file changes with StatReloader
+INFO 2025-10-19 01:44:53,554 autoreload 28516 10532 Watching for file changes with StatReloader
+INFO 2025-10-19 01:44:59,396 basehttp 28516 24024 "GET / HTTP/1.1" 200 30268
+INFO 2025-10-19 01:45:36,905 basehttp 28516 24024 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:45:43,597 basehttp 28516 24024 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-19 01:45:49,764 basehttp 28516 24024 "GET /profile/ HTTP/1.1" 200 45991
+INFO 2025-10-19 01:45:54,424 basehttp 28516 24024 "GET /class-notes/ HTTP/1.1" 200 52450
+INFO 2025-10-19 01:45:54,728 basehttp 28516 24024 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+INFO 2025-10-19 01:46:03,824 basehttp 28516 24024 "GET /class-notes/get-folder-content/?folder=School HTTP/1.1" 200 45
+INFO 2025-10-19 01:46:11,999 basehttp 28516 24024 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+INFO 2025-10-19 01:46:14,492 basehttp 28516 24024 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-10-19 01:46:28,474 basehttp 28516 24024 "GET /class-notes/get-file-content/?filename=profile.html&folder= HTTP/1.1" 200 14546
+INFO 2025-10-19 01:46:48,322 basehttp 28516 24024 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:46:53,048 basehttp 28516 24024 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-19 01:46:57,813 basehttp 28516 24024 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:46:58,703 basehttp 28516 24024 "GET / HTTP/1.1" 200 30268
+INFO 2025-10-19 01:53:30,780 basehttp 28516 41220 "GET / HTTP/1.1" 200 30268
+INFO 2025-10-19 01:53:32,908 basehttp 28516 41220 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:53:36,849 basehttp 28516 41220 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-19 01:54:23,263 basehttp 28516 41220 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-19 01:54:24,984 basehttp 28516 41220 "GET / HTTP/1.1" 200 30268
+INFO 2025-10-19 01:54:35,620 basehttp 28516 41220 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:54:41,551 basehttp 28516 41220 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-19 01:57:24,564 basehttp 28516 35852 "GET /activities/ HTTP/1.1" 200 61981
+INFO 2025-10-19 01:57:27,295 basehttp 28516 35852 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:57:30,943 basehttp 28516 35852 "GET / HTTP/1.1" 200 30268
+INFO 2025-10-19 01:57:40,134 basehttp 28516 35852 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-19 01:57:44,378 basehttp 28516 35852 "GET /activities/ HTTP/1.1" 200 61981
+INFO 2025-10-19 01:59:54,354 basehttp 28516 35852 "GET / HTTP/1.1" 200 30268
+INFO 2025-10-19 01:59:56,247 basehttp 28516 35852 "GET /?day=2025-10-20 HTTP/1.1" 200 45731
+INFO 2025-10-19 02:00:26,744 basehttp 28516 35852 "GET /class-notes/ HTTP/1.1" 200 52450
+INFO 2025-10-19 02:00:27,120 basehttp 28516 35852 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+INFO 2025-10-19 02:00:29,009 basehttp 28516 35852 "GET /profile/ HTTP/1.1" 200 45991
+INFO 2025-10-19 02:00:44,912 basehttp 28516 35852 "POST /profile/ HTTP/1.1" 302 0
+INFO 2025-10-19 02:00:44,937 basehttp 28516 35852 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-19 02:00:45,071 basehttp 28516 35852 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 200 56198
+INFO 2025-10-20 01:04:00,133 basehttp 28516 17304 "GET / HTTP/1.1" 200 45817
+INFO 2025-10-20 17:18:08,181 basehttp 28516 692 "GET / HTTP/1.1" 200 47380
+INFO 2025-10-20 17:18:29,185 basehttp 28516 692 "GET /activities/resources/ HTTP/1.1" 200 29489
+INFO 2025-10-20 17:19:08,078 basehttp 28516 692 "GET /activities/resources/ HTTP/1.1" 200 28879
+INFO 2025-10-20 17:19:18,005 basehttp 28516 692 "GET /activities/resources/ HTTP/1.1" 200 29102
+INFO 2025-10-20 17:19:28,937 basehttp 28516 692 "GET /activities/resources/ HTTP/1.1" 200 29102
+INFO 2025-10-20 17:19:36,072 basehttp 28516 692 "GET /activities/resources/ HTTP/1.1" 200 29489
+INFO 2025-10-20 17:20:09,893 autoreload 28516 10532 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 17:20:09,878 autoreload 42988 24132 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 17:20:21,185 autoreload 27816 20724 Watching for file changes with StatReloader
+INFO 2025-10-20 17:20:21,185 autoreload 41472 25292 Watching for file changes with StatReloader
+INFO 2025-10-20 17:23:03,007 autoreload 41472 25292 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 17:23:03,025 autoreload 27816 20724 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 17:23:06,101 autoreload 43440 47800 Watching for file changes with StatReloader
+INFO 2025-10-20 17:23:17,864 basehttp 34300 33688 "GET /activities/resources/ HTTP/1.1" 200 29489
+INFO 2025-10-20 17:23:53,563 basehttp 34300 44456 "GET / HTTP/1.1" 200 47380
+INFO 2025-10-20 17:26:32,686 autoreload 43440 47800 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 17:26:32,709 autoreload 34300 40176 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 17:26:35,106 autoreload 47524 49148 Watching for file changes with StatReloader
+INFO 2025-10-20 17:26:35,110 autoreload 38476 46024 Watching for file changes with StatReloader
+INFO 2025-10-20 17:30:11,977 basehttp 47524 42252 "GET /class-notes/ HTTP/1.1" 200 52450
+INFO 2025-10-20 17:30:12,874 basehttp 47524 42252 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+INFO 2025-10-20 17:30:16,145 basehttp 47524 42252 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-10-20 17:30:19,116 basehttp 47524 42252 "POST /class-notes/generate-summary/ HTTP/1.1" 200 8187
+INFO 2025-10-20 17:30:33,686 basehttp 47524 42252 "GET /class-notes/get-file-content/?filename=profile.html&folder= HTTP/1.1" 200 14546
+INFO 2025-10-20 17:30:36,172 basehttp 47524 42252 "POST /class-notes/generate-summary/ HTTP/1.1" 200 545
+INFO 2025-10-20 17:31:23,001 autoreload 38476 46024 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-20 17:31:23,228 autoreload 47524 49148 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-20 17:31:25,536 autoreload 7216 46064 Watching for file changes with StatReloader
+INFO 2025-10-20 17:31:25,765 autoreload 45868 41328 Watching for file changes with StatReloader
+INFO 2025-10-20 17:31:33,430 basehttp 7216 48952 "GET /class-notes/ HTTP/1.1" 200 52450
+INFO 2025-10-20 17:31:33,832 basehttp 7216 48952 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+ERROR 2025-10-20 17:31:38,837 log 7216 48952 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: user_timetable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 59, in dashboard
+    today_schedule = list(jkuat_schedule) + list(user_timetable) + list(personal_schedule)
+                                            ~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: user_timetable
+ERROR 2025-10-20 17:31:38,853 basehttp 7216 48952 "GET / HTTP/1.1" 500 148989
+ERROR 2025-10-20 17:32:00,622 log 7216 48952 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: user_timetable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 59, in dashboard
+    today_schedule = list(jkuat_schedule) + list(user_timetable) + list(personal_schedule)
+                                            ~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: user_timetable
+ERROR 2025-10-20 17:32:00,634 basehttp 7216 48952 "GET / HTTP/1.1" 500 149125
+ERROR 2025-10-20 17:32:16,873 log 7216 48952 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: user_timetable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 59, in dashboard
+    today_schedule = list(jkuat_schedule) + list(user_timetable) + list(personal_schedule)
+                                            ~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: user_timetable
+ERROR 2025-10-20 17:32:16,881 basehttp 7216 48952 "GET / HTTP/1.1" 500 149126
+INFO 2025-10-20 17:33:01,908 autoreload 45868 41328 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-20 17:33:01,933 autoreload 7216 46064 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-20 17:33:04,373 autoreload 45012 6288 Watching for file changes with StatReloader
+INFO 2025-10-20 17:33:04,399 autoreload 47856 49132 Watching for file changes with StatReloader
+ERROR 2025-10-20 17:35:07,098 log 47856 40940 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: user_timetable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 59, in dashboard
+    today_schedule = list(jkuat_schedule) + list(user_timetable) + list(personal_schedule)
+                                            ~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: user_timetable
+ERROR 2025-10-20 17:35:07,109 basehttp 47856 40940 "GET / HTTP/1.1" 500 149124
+INFO 2025-10-20 17:42:51,641 basehttp 47856 10024 "GET / HTTP/1.1" 200 48147
+ERROR 2025-10-20 17:43:00,635 log 47856 10024 Internal Server Error: /timetable/
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'timetable_by_day|get_item:day'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 162, in timetable_input
+    return render(request, 'timetable_input.html', context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'get_item'
+ERROR 2025-10-20 17:43:00,652 basehttp 47856 10024 "GET /timetable/ HTTP/1.1" 500 310714
+INFO 2025-10-20 17:45:53,484 basehttp 47856 10024 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-20 17:46:12,597 basehttp 47856 10024 "GET / HTTP/1.1" 200 48147
+INFO 2025-10-20 17:46:19,952 basehttp 47856 36320 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-20 17:46:25,240 basehttp 47856 36320 "POST /timetable/generate-schedule/ HTTP/1.1" 200 100
+INFO 2025-10-20 17:46:38,876 basehttp 47856 36320 "GET / HTTP/1.1" 200 48147
+INFO 2025-10-20 17:46:41,067 basehttp 47856 36320 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-20 17:47:20,873 basehttp 47856 46124 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-20 17:47:20,900 basehttp 47856 46124 "GET /timetable/ HTTP/1.1" 200 22848
+INFO 2025-10-20 17:47:23,870 basehttp 47856 46124 "GET / HTTP/1.1" 200 49840
+INFO 2025-10-20 17:47:34,537 basehttp 47856 46124 "GET /timetable/ HTTP/1.1" 200 22848
+INFO 2025-10-20 17:47:35,918 basehttp 47856 46124 "POST /timetable/generate-schedule/ HTTP/1.1" 200 100
+INFO 2025-10-20 17:47:38,579 basehttp 47856 46124 "GET / HTTP/1.1" 200 55098
+INFO 2025-10-20 17:47:49,405 basehttp 47856 46124 "GET /timetable/ HTTP/1.1" 200 22848
+INFO 2025-10-20 17:47:52,694 basehttp 47856 46124 "POST /timetable/clear/ HTTP/1.1" 200 63
+INFO 2025-10-20 17:47:54,564 basehttp 47856 46124 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-20 17:48:25,202 basehttp 47856 46124 "GET / HTTP/1.1" 200 53406
+INFO 2025-10-20 17:48:32,938 basehttp 47856 46124 "GET / HTTP/1.1" 200 53406
+INFO 2025-10-20 17:48:40,989 basehttp 47856 46124 "GET /activities/ HTTP/1.1" 200 67656
+INFO 2025-10-20 17:48:46,729 basehttp 47856 46124 "GET /activities/resources/ HTTP/1.1" 200 34069
+INFO 2025-10-20 17:54:08,723 basehttp 47856 37656 "GET /activities/resources/ HTTP/1.1" 200 16146
+INFO 2025-10-20 17:54:13,313 basehttp 47856 37656 "GET / HTTP/1.1" 200 31036
+INFO 2025-10-20 18:04:02,163 basehttp 47856 39116 "GET / HTTP/1.1" 200 50160
+INFO 2025-10-20 18:04:29,905 basehttp 47856 28244 "GET /activities/resources/ HTTP/1.1" 200 31196
+INFO 2025-10-20 18:04:38,437 basehttp 47856 19324 "GET /activities/ HTTP/1.1" 200 145473
+INFO 2025-10-20 18:05:32,340 basehttp 47856 48244 "GET / HTTP/1.1" 200 50160
+INFO 2025-10-20 18:05:36,689 basehttp 47856 48244 "GET /activities/ HTTP/1.1" 200 145473
+INFO 2025-10-20 18:05:42,688 basehttp 47856 4620 "GET / HTTP/1.1" 200 50160
+INFO 2025-10-20 18:06:11,503 basehttp 47856 4984 "GET /activities/resources/ HTTP/1.1" 200 31196
+INFO 2025-10-20 18:06:14,121 basehttp 47856 4984 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-20 18:06:14,325 basehttp 47856 4984 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 200 56198
+INFO 2025-10-20 18:08:10,402 basehttp 47856 43088 "GET / HTTP/1.1" 200 50160
+INFO 2025-10-20 18:08:15,703 basehttp 47856 11812 "GET / HTTP/1.1" 200 50160
+INFO 2025-10-20 18:13:40,641 basehttp 47856 30112 "GET / HTTP/1.1" 200 50160
+INFO 2025-10-20 18:14:16,037 basehttp 47856 11208 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-20 18:15:07,432 basehttp 47856 34768 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-20 18:15:07,457 basehttp 47856 34768 "GET /timetable/ HTTP/1.1" 200 22867
+INFO 2025-10-20 18:15:09,189 basehttp 47856 34768 "POST /timetable/generate-schedule/ HTTP/1.1" 200 100
+INFO 2025-10-20 18:15:11,897 basehttp 47856 34768 "GET / HTTP/1.1" 200 55370
+INFO 2025-10-20 18:16:00,042 basehttp 47856 43796 "GET / HTTP/1.1" 200 55370
+INFO 2025-10-20 18:16:02,539 basehttp 47856 43796 "GET / HTTP/1.1" 200 55370
+INFO 2025-10-20 18:16:08,779 basehttp 47856 35292 "GET /?day=2025-10-21 HTTP/1.1" 200 48507
+INFO 2025-10-20 18:18:50,092 basehttp 47856 5412 "GET /?day=2025-10-21 HTTP/1.1" 200 48507
+INFO 2025-10-20 18:18:56,164 basehttp 47856 5412 "GET /?day=2025-10-20 HTTP/1.1" 200 55370
+INFO 2025-10-20 18:19:00,631 basehttp 47856 7652 "GET /?day=2025-10-20 HTTP/1.1" 200 55370
+INFO 2025-10-20 18:19:27,717 basehttp 47856 23320 "GET /?day=2025-10-20 HTTP/1.1" 200 55370
+INFO 2025-10-20 18:19:30,572 basehttp 47856 28948 "GET /?day=2025-10-20 HTTP/1.1" 200 55370
+INFO 2025-10-20 18:19:32,697 basehttp 47856 28948 "GET /timetable/ HTTP/1.1" 200 22867
+INFO 2025-10-20 18:19:37,397 basehttp 47856 28948 "POST /timetable/delete/e6ac9540-884f-40a3-bcdc-1df7f79089c3/ HTTP/1.1" 302 0
+INFO 2025-10-20 18:19:37,423 basehttp 47856 28948 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-20 18:19:40,981 basehttp 47856 22944 "GET / HTTP/1.1" 200 53678
+INFO 2025-10-20 18:19:41,930 basehttp 47856 22944 "GET / HTTP/1.1" 200 53678
+INFO 2025-10-20 18:19:46,647 basehttp 47856 22944 "GET / HTTP/1.1" 200 53678
+INFO 2025-10-20 18:20:03,721 basehttp 47856 7484 "GET / HTTP/1.1" 200 31036
+INFO 2025-10-20 18:20:40,500 autoreload 47856 49132 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 18:20:40,487 autoreload 45012 6288 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-20 18:20:43,669 autoreload 33352 28056 Watching for file changes with StatReloader
+INFO 2025-10-20 18:20:43,669 autoreload 46356 27672 Watching for file changes with StatReloader
+ERROR 2025-10-23 00:17:01,601 log 33352 3244 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: progress_tracker.consistency_score
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 69, in dashboard
+    ).first()
+      ~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: progress_tracker.consistency_score
+ERROR 2025-10-23 00:17:01,642 basehttp 33352 3244 "GET / HTTP/1.1" 500 151665
+ERROR 2025-10-23 00:17:24,834 log 33352 48384 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: progress_tracker.consistency_score
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 69, in dashboard
+    ).first()
+      ~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: progress_tracker.consistency_score
+ERROR 2025-10-23 00:17:24,843 basehttp 33352 48384 "GET / HTTP/1.1" 500 151666
+INFO 2025-10-23 00:24:13,371 autoreload 47992 47868 Watching for file changes with StatReloader
+INFO 2025-10-23 00:24:39,246 basehttp 47992 20400 "GET / HTTP/1.1" 200 31042
+INFO 2025-10-23 00:24:53,848 basehttp 47992 20400 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-23 00:25:12,942 basehttp 47992 20400 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-23 00:27:14,873 autoreload 47992 47868 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\smart_scheduler.py changed, reloading.
+INFO 2025-10-23 00:27:18,095 autoreload 52592 50032 Watching for file changes with StatReloader
+INFO 2025-10-23 00:27:36,831 basehttp 52592 9476 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-23 00:27:38,917 basehttp 52592 9476 "GET / HTTP/1.1" 200 31042
+WARNING 2025-10-23 00:28:19,112 log 52592 51092 Not Found: /smart_dashboard
+WARNING 2025-10-23 00:28:19,113 basehttp 52592 51092 "GET /smart_dashboard HTTP/1.1" 404 10604
+ERROR 2025-10-23 00:28:47,030 log 52592 51092 Internal Server Error: /smart-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 143, in smart_dashboard
+    smart_activities = SmartActivity.objects.filter(
+                       ^^^^^^^^^^^^^
+NameError: name 'SmartActivity' is not defined
+ERROR 2025-10-23 00:28:47,040 basehttp 52592 51092 "GET /smart-dashboard/ HTTP/1.1" 500 79745
+INFO 2025-10-23 00:29:50,430 autoreload 52592 50032 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:29:52,909 autoreload 20036 42932 Watching for file changes with StatReloader
+INFO 2025-10-23 00:31:12,051 autoreload 50332 19256 Watching for file changes with StatReloader
+ERROR 2025-10-23 00:31:16,293 log 50332 33036 Internal Server Error: /smart-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py", line 191, in smart_dashboard
+    return render(request, 'smart_dashboard.html', context)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1127, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '('-last_adjusted').first' from 'smart_activities.order_by('-last_adjusted').first'
+ERROR 2025-10-23 00:31:16,325 basehttp 50332 33036 "GET /smart-dashboard/ HTTP/1.1" 500 246143
+INFO 2025-10-23 00:36:17,520 autoreload 50332 19256 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:36:20,172 autoreload 50604 52956 Watching for file changes with StatReloader
+INFO 2025-10-23 00:36:32,928 basehttp 50604 49172 "GET /smart-dashboard/ HTTP/1.1" 200 59953
+INFO 2025-10-23 00:36:59,024 basehttp 50604 49172 "GET / HTTP/1.1" 200 31042
+INFO 2025-10-23 00:45:23,227 autoreload 47460 49864 Watching for file changes with StatReloader
+INFO 2025-10-23 00:45:46,154 basehttp 47460 46916 "GET /smart-dashboard/ HTTP/1.1" 200 59943
+INFO 2025-10-23 00:47:22,982 basehttp 47460 46916 "GET /smart-dashboard/ HTTP/1.1" 200 31328
+INFO 2025-10-23 00:47:41,345 basehttp 47460 46916 "GET / HTTP/1.1" 200 31042
+INFO 2025-10-23 00:51:40,974 autoreload 47460 49864 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:51:43,533 autoreload 34164 41056 Watching for file changes with StatReloader
+INFO 2025-10-23 00:51:52,934 autoreload 34164 41056 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:51:55,697 autoreload 13284 51376 Watching for file changes with StatReloader
+INFO 2025-10-23 00:52:06,247 autoreload 13284 51376 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:52:08,977 autoreload 26588 5924 Watching for file changes with StatReloader
+INFO 2025-10-23 00:52:19,472 autoreload 26588 5924 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:52:21,830 autoreload 39116 47236 Watching for file changes with StatReloader
+INFO 2025-10-23 00:53:44,490 autoreload 39116 47236 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:53:47,002 autoreload 47160 22504 Watching for file changes with StatReloader
+INFO 2025-10-23 00:53:50,758 autoreload 47160 22504 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:53:53,711 autoreload 50196 11740 Watching for file changes with StatReloader
+INFO 2025-10-23 00:53:57,182 autoreload 50196 11740 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:53:59,537 autoreload 48176 27860 Watching for file changes with StatReloader
+INFO 2025-10-23 00:54:15,469 autoreload 48176 27860 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:54:17,810 autoreload 29168 20468 Watching for file changes with StatReloader
+INFO 2025-10-23 00:54:22,634 autoreload 29168 20468 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:54:25,033 autoreload 52780 4296 Watching for file changes with StatReloader
+INFO 2025-10-23 00:56:51,672 autoreload 52780 4296 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-23 00:56:54,508 autoreload 23248 37292 Watching for file changes with StatReloader
+INFO 2025-10-23 00:57:08,978 autoreload 23248 37292 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-23 00:57:12,094 autoreload 52400 51496 Watching for file changes with StatReloader
+INFO 2025-10-23 00:58:30,799 autoreload 52400 51496 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 00:58:33,334 autoreload 36056 35224 Watching for file changes with StatReloader
+INFO 2025-10-23 00:58:40,243 basehttp 36056 51444 "GET / HTTP/1.1" 200 49867
+INFO 2025-10-23 00:59:48,890 basehttp 36056 36860 "GET /timetable/ HTTP/1.1" 200 20489
+INFO 2025-10-23 01:00:02,190 basehttp 36056 36860 "GET /timetable/ HTTP/1.1" 200 20489
+INFO 2025-10-23 01:00:42,471 basehttp 36056 36860 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-23 01:00:42,493 basehttp 36056 36860 "GET /timetable/ HTTP/1.1" 200 22854
+INFO 2025-10-23 01:00:46,422 basehttp 36056 16188 "GET / HTTP/1.1" 200 49867
+INFO 2025-10-23 01:01:00,459 basehttp 36056 51904 "GET /timetable/ HTTP/1.1" 200 22854
+INFO 2025-10-23 01:01:02,472 basehttp 36056 51904 "POST /timetable/generate-schedule/ HTTP/1.1" 200 92
+INFO 2025-10-23 01:01:05,077 basehttp 36056 17748 "GET / HTTP/1.1" 200 49867
+INFO 2025-10-23 01:01:18,231 basehttp 36056 5636 "GET /?day=2025-10-22 HTTP/1.1" 200 51487
+INFO 2025-10-23 01:01:29,231 basehttp 36056 6196 "GET /?day=2025-10-22 HTTP/1.1" 200 51487
+INFO 2025-10-23 01:04:17,872 autoreload 36056 35224 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\smart_scheduler.py changed, reloading.
+INFO 2025-10-23 01:04:21,657 autoreload 42096 29516 Watching for file changes with StatReloader
+INFO 2025-10-23 01:05:40,783 autoreload 42096 29516 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 01:05:43,303 autoreload 52536 46900 Watching for file changes with StatReloader
+INFO 2025-10-23 01:05:53,768 autoreload 52536 46900 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 01:05:56,227 autoreload 42456 42704 Watching for file changes with StatReloader
+INFO 2025-10-23 01:06:21,520 autoreload 42456 42704 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 01:06:24,808 autoreload 52936 42984 Watching for file changes with StatReloader
+INFO 2025-10-23 01:06:31,878 autoreload 52936 42984 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 01:06:34,352 autoreload 52528 17048 Watching for file changes with StatReloader
+INFO 2025-10-23 01:08:13,196 autoreload 52528 17048 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\smart_scheduler.py changed, reloading.
+INFO 2025-10-23 01:08:16,829 autoreload 32340 29324 Watching for file changes with StatReloader
+INFO 2025-10-23 01:10:18,671 autoreload 32340 29324 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\smart_scheduler.py changed, reloading.
+INFO 2025-10-23 01:10:21,282 autoreload 18408 33772 Watching for file changes with StatReloader
+INFO 2025-10-23 01:10:28,516 basehttp 18408 41940 "GET /?day=2025-10-22 HTTP/1.1" 200 51487
+INFO 2025-10-23 01:10:35,121 basehttp 18408 41940 "GET /?day=2025-10-22 HTTP/1.1" 200 51487
+INFO 2025-10-23 01:10:38,684 basehttp 18408 41940 "GET /timetable/ HTTP/1.1" 200 22854
+INFO 2025-10-23 01:10:42,023 basehttp 18408 41940 "POST /timetable/clear/ HTTP/1.1" 200 69
+INFO 2025-10-23 01:10:43,609 basehttp 18408 41940 "GET /timetable/ HTTP/1.1" 200 20489
+INFO 2025-10-23 01:10:44,704 basehttp 18408 41940 "GET / HTTP/1.1" 200 49867
+INFO 2025-10-23 01:10:49,274 basehttp 18408 41940 "GET /timetable/ HTTP/1.1" 200 20489
+INFO 2025-10-23 01:11:14,931 basehttp 18408 41940 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-23 01:11:14,960 basehttp 18408 41940 "GET /timetable/ HTTP/1.1" 200 22853
+INFO 2025-10-23 01:11:16,326 basehttp 18408 41940 "POST /timetable/generate-schedule/ HTTP/1.1" 200 92
+INFO 2025-10-23 01:11:19,689 basehttp 18408 41940 "GET / HTTP/1.1" 200 51559
+INFO 2025-10-23 01:33:23,480 autoreload 18408 33772 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 01:33:26,837 autoreload 51044 38224 Watching for file changes with StatReloader
+INFO 2025-10-23 01:38:19,576 autoreload 51044 38224 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 01:38:22,181 autoreload 43512 46908 Watching for file changes with StatReloader
+INFO 2025-10-23 01:43:40,526 basehttp 43512 51920 "GET / HTTP/1.1" 200 56577
+INFO 2025-10-23 01:44:32,540 autoreload 43512 46908 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\smart_scheduler.py changed, reloading.
+INFO 2025-10-23 01:44:36,208 autoreload 35092 46584 Watching for file changes with StatReloader
+INFO 2025-10-23 01:46:43,132 basehttp 35092 10200 "GET / HTTP/1.1" 200 54626
+INFO 2025-10-23 01:46:52,505 basehttp 35092 41212 "GET /activities/ HTTP/1.1" 200 156279
+INFO 2025-10-23 01:46:56,179 basehttp 35092 41212 "GET /activities/resources/ HTTP/1.1" 200 16132
+INFO 2025-10-23 21:57:38,435 basehttp 35092 41052 "GET /activities/resources/ HTTP/1.1" 200 16132
+INFO 2025-10-23 21:57:42,322 basehttp 35092 41052 "GET / HTTP/1.1" 200 56437
+INFO 2025-10-23 22:01:02,905 autoreload 35092 46584 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:01:13,352 autoreload 50644 39864 Watching for file changes with StatReloader
+INFO 2025-10-23 22:01:37,392 autoreload 50644 39864 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:01:39,951 autoreload 11672 43888 Watching for file changes with StatReloader
+INFO 2025-10-23 22:07:35,245 autoreload 11672 43888 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:07:38,635 autoreload 30660 16992 Watching for file changes with StatReloader
+INFO 2025-10-23 22:11:49,049 autoreload 51028 33180 Watching for file changes with StatReloader
+INFO 2025-10-23 22:17:22,799 autoreload 51028 33180 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:17:26,119 autoreload 45868 50504 Watching for file changes with StatReloader
+INFO 2025-10-23 22:22:25,787 autoreload 45868 50504 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-23 22:22:29,365 autoreload 44196 1260 Watching for file changes with StatReloader
+INFO 2025-10-23 22:22:50,190 autoreload 32036 20268 Watching for file changes with StatReloader
+INFO 2025-10-23 22:22:59,849 basehttp 32036 49924 "GET / HTTP/1.1" 200 55734
+INFO 2025-10-23 22:23:03,430 basehttp 32036 36756 "GET /activities/resources/?type= HTTP/1.1" 200 94955
+INFO 2025-10-23 22:27:05,679 autoreload 32036 20268 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:27:08,693 autoreload 43276 29444 Watching for file changes with StatReloader
+INFO 2025-10-23 22:39:12,495 autoreload 6408 29200 Watching for file changes with StatReloader
+INFO 2025-10-23 22:39:15,848 basehttp 6408 36560 "GET /activities/resources/?type= HTTP/1.1" 200 176082
+INFO 2025-10-23 22:39:42,135 autoreload 6408 29200 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:39:45,488 autoreload 24488 46352 Watching for file changes with StatReloader
+INFO 2025-10-23 22:39:49,638 basehttp 24488 50448 "GET /activities/resources/?type= HTTP/1.1" 200 176082
+INFO 2025-10-23 22:47:29,113 autoreload 24488 46352 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\models.py changed, reloading.
+INFO 2025-10-23 22:47:39,126 autoreload 20268 45176 Watching for file changes with StatReloader
+INFO 2025-10-23 23:01:32,707 autoreload 44104 32036 Watching for file changes with StatReloader
+INFO 2025-10-23 23:01:46,109 basehttp 44104 34012 "GET / HTTP/1.1" 200 55734
+INFO 2025-10-23 23:01:57,994 basehttp 44104 50432 "GET / HTTP/1.1" 200 55734
+INFO 2025-10-23 23:02:02,187 basehttp 44104 50432 "GET / HTTP/1.1" 200 55734
+INFO 2025-10-23 23:02:05,892 basehttp 44104 40124 "GET /activities/ HTTP/1.1" 200 156279
+INFO 2025-10-23 23:02:19,251 basehttp 44104 25036 "GET /class-notes/ HTTP/1.1" 200 52434
+INFO 2025-10-23 23:02:20,807 basehttp 44104 25036 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+INFO 2025-10-23 23:02:23,262 basehttp 44104 25036 "GET / HTTP/1.1" 200 55734
+INFO 2025-10-23 23:02:26,998 basehttp 44104 22984 "GET /activities/resources/ HTTP/1.1" 200 190109
+INFO 2025-10-23 23:02:41,155 basehttp 44104 22128 "POST /resources/e98e8094-cee9-4ecd-b650-dd86206273d2/toggle-favorite/ HTTP/1.1" 200 76
+INFO 2025-10-23 23:02:42,992 basehttp 44104 22128 "POST /resources/e98e8094-cee9-4ecd-b650-dd86206273d2/toggle-favorite/ HTTP/1.1" 200 77
+INFO 2025-10-24 00:20:53,089 basehttp 44104 19524 "GET / HTTP/1.1" 200 54622
+INFO 2025-10-24 00:20:55,794 basehttp 44104 19524 "GET /activities/ HTTP/1.1" 200 156279
+INFO 2025-10-24 00:21:07,208 basehttp 44104 19524 "GET /class-notes/ HTTP/1.1" 200 52434
+INFO 2025-10-24 00:21:07,529 basehttp 44104 19524 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 232
+INFO 2025-10-24 00:21:10,722 basehttp 44104 19524 "GET /class-notes/get-file-content/?filename=profile.html&folder= HTTP/1.1" 200 14546
+INFO 2025-10-24 00:21:13,468 basehttp 44104 19524 "POST /class-notes/generate-summary/ HTTP/1.1" 200 545
+INFO 2025-10-24 00:21:38,768 basehttp 44104 19524 "POST /class-notes/upload-file/ HTTP/1.1" 200 77
+INFO 2025-10-24 00:21:38,776 basehttp 44104 19524 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-24 00:21:40,578 basehttp 44104 19524 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-10-24 00:21:44,083 basehttp 44104 19524 "POST /class-notes/generate-summary/ HTTP/1.1" 200 8187
+INFO 2025-10-24 00:21:54,091 basehttp 44104 19524 "GET /class-notes/get-file-content/?filename=dashboard.html&folder= HTTP/1.1" 200 34773
+INFO 2025-10-24 00:21:56,663 basehttp 44104 19524 "POST /class-notes/generate-summary/ HTTP/1.1" 200 522
+INFO 2025-10-24 00:22:03,567 basehttp 44104 19524 "POST /class-notes/launch-vscode/ HTTP/1.1" 200 56
+INFO 2025-10-24 00:22:08,262 basehttp 44104 19524 "POST /class-notes/launch-vscode/ HTTP/1.1" 200 56
+INFO 2025-10-24 00:22:15,091 basehttp 44104 19524 "GET /class-notes/get-folder-content/?folder=new HTTP/1.1" 200 83
+INFO 2025-10-24 00:22:18,125 basehttp 44104 19524 "GET /class-notes/get-file-content/?filename=asgi.py&folder=new HTTP/1.1" 200 463
+INFO 2025-10-24 00:22:21,209 basehttp 44104 19524 "POST /class-notes/generate-summary/ HTTP/1.1" 200 393
+INFO 2025-10-24 00:22:53,643 basehttp 44104 19524 "GET / HTTP/1.1" 200 54622
+INFO 2025-10-25 16:53:31,219 basehttp 44104 44884 "GET / HTTP/1.1" 200 54604
+INFO 2025-10-26 01:18:56,854 basehttp 44104 46344 "GET / HTTP/1.1" 200 54622
+INFO 2025-10-26 01:18:58,664 basehttp 44104 41416 "GET / HTTP/1.1" 200 54622
+INFO 2025-10-26 01:54:49,084 autoreload 44104 32036 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-26 01:55:04,372 autoreload 52636 6336 Watching for file changes with StatReloader
+INFO 2025-10-26 01:55:12,840 basehttp 52636 48976 "GET / HTTP/1.1" 200 54638
+INFO 2025-10-26 01:55:17,219 basehttp 52636 44444 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-26 01:55:17,430 basehttp 52636 44444 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 200 56198
+INFO 2025-10-26 02:04:34,992 basehttp 52636 49404 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-26 02:04:46,590 basehttp 52636 49404 "GET / HTTP/1.1" 200 31099
+INFO 2025-10-26 02:04:52,127 basehttp 52636 49404 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-10-26 02:04:52,385 basehttp 52636 49404 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-26 02:04:57,029 basehttp 52636 49404 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-26 02:04:58,854 basehttp 52636 49404 "GET /activities/ HTTP/1.1" 200 13467
+INFO 2025-10-26 02:05:01,912 basehttp 52636 49404 "GET /activities/resources/ HTTP/1.1" 200 190123
+INFO 2025-10-26 02:08:37,831 basehttp 52636 51276 "GET /activities/resources/ HTTP/1.1" 200 190123
+INFO 2025-10-26 02:08:41,490 basehttp 52636 51276 "GET / HTTP/1.1" 200 52488
+INFO 2025-10-26 02:31:29,057 basehttp 52636 47972 "GET / HTTP/1.1" 200 48440
+INFO 2025-10-26 02:32:05,038 basehttp 52636 48032 "GET /activities/resources/ HTTP/1.1" 200 190123
+INFO 2025-10-26 02:32:08,729 basehttp 52636 17352 "GET /activities/ HTTP/1.1" 200 119153
+INFO 2025-10-26 02:32:28,099 basehttp 52636 51808 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-26 02:32:28,186 basehttp 52636 51808 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 200 56198
+INFO 2025-10-26 02:32:34,554 basehttp 52636 51808 "GET / HTTP/1.1" 200 48440
+INFO 2025-10-26 02:33:08,258 basehttp 52636 49880 "GET /timetable/ HTTP/1.1" 200 20505
+INFO 2025-10-26 02:35:31,577 basehttp 52636 42700 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 02:35:31,603 basehttp 52636 42700 "GET /timetable/ HTTP/1.1" 200 22871
+INFO 2025-10-26 02:35:35,171 basehttp 52636 39652 "POST /timetable/generate-schedule/ HTTP/1.1" 200 92
+INFO 2025-10-26 02:35:39,344 basehttp 52636 39652 "GET / HTTP/1.1" 200 48440
+INFO 2025-10-26 02:35:46,887 basehttp 52636 20996 "GET /?day=2025-10-27 HTTP/1.1" 200 50537
+INFO 2025-10-26 02:36:53,899 basehttp 52636 50128 "GET /timetable/ HTTP/1.1" 200 22871
+INFO 2025-10-26 02:38:04,348 basehttp 52636 48956 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 02:38:04,374 basehttp 52636 48956 "GET /timetable/ HTTP/1.1" 200 24834
+INFO 2025-10-26 02:39:29,210 basehttp 52636 48956 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 02:39:29,233 basehttp 52636 48956 "GET /timetable/ HTTP/1.1" 200 26814
+INFO 2025-10-26 02:39:33,245 basehttp 52636 48956 "POST /timetable/generate-schedule/ HTTP/1.1" 200 92
+INFO 2025-10-26 02:39:36,476 basehttp 52636 48956 "GET / HTTP/1.1" 200 48440
+INFO 2025-10-26 02:39:45,848 basehttp 52636 48956 "GET /?day=2025-10-27 HTTP/1.1" 200 54477
+INFO 2025-10-26 02:40:36,109 basehttp 52636 48956 "GET /?day=2025-10-26 HTTP/1.1" 200 48440
+INFO 2025-10-26 02:40:45,017 basehttp 52636 48956 "GET /timetable/ HTTP/1.1" 200 26814
+INFO 2025-10-26 02:41:59,020 basehttp 52636 48956 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 02:41:59,044 basehttp 52636 48956 "GET /timetable/ HTTP/1.1" 200 29252
+INFO 2025-10-26 02:43:44,888 basehttp 52636 48956 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 02:43:44,914 basehttp 52636 48956 "GET /timetable/ HTTP/1.1" 200 31205
+INFO 2025-10-26 02:44:50,493 basehttp 52636 48956 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 02:44:50,518 basehttp 52636 48956 "GET /timetable/ HTTP/1.1" 200 33172
+INFO 2025-10-26 02:45:19,622 basehttp 52636 48956 "POST /timetable/generate-schedule/ HTTP/1.1" 200 92
+INFO 2025-10-26 02:45:22,602 basehttp 52636 48956 "GET / HTTP/1.1" 200 48440
+INFO 2025-10-26 02:45:23,235 basehttp 52636 48956 "GET / HTTP/1.1" 200 48440
+INFO 2025-10-26 02:45:33,065 basehttp 52636 48956 "GET /?day=2025-10-27 HTTP/1.1" 200 54477
+INFO 2025-10-26 02:46:06,801 basehttp 52636 48956 "GET /?day=2025-10-28 HTTP/1.1" 200 54464
+INFO 2025-10-26 02:46:40,100 basehttp 52636 48956 "GET /?day=2025-10-29 HTTP/1.1" 200 48583
+INFO 2025-10-26 02:46:50,332 basehttp 52636 48956 "GET /?day=2025-10-30 HTTP/1.1" 200 48581
+INFO 2025-10-26 02:54:48,531 basehttp 52636 16644 "GET /?day=2025-10-30 HTTP/1.1" 200 50704
+INFO 2025-10-26 02:54:54,784 basehttp 52636 12948 "GET /?day=2025-10-29 HTTP/1.1" 200 50706
+INFO 2025-10-26 02:54:55,891 basehttp 52636 12948 "GET /?day=2025-10-28 HTTP/1.1" 200 56587
+INFO 2025-10-26 02:55:06,444 basehttp 52636 15088 "GET /?day=2025-10-27 HTTP/1.1" 200 56600
+INFO 2025-10-26 02:55:19,176 basehttp 52636 8572 "GET /?day=2025-10-26 HTTP/1.1" 200 50563
+INFO 2025-10-26 03:12:38,961 basehttp 52636 2876 "GET /?day=2025-10-26 HTTP/1.1" 200 50429
+INFO 2025-10-26 03:13:19,537 basehttp 52636 41068 "GET /?day=2025-10-27 HTTP/1.1" 200 56466
+INFO 2025-10-26 03:24:50,146 autoreload 52636 6336 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-26 03:24:53,605 autoreload 52328 40892 Watching for file changes with StatReloader
+INFO 2025-10-26 03:25:26,608 basehttp 52328 37216 "GET /?day=2025-10-27 HTTP/1.1" 200 56552
+INFO 2025-10-26 03:25:52,422 basehttp 52328 47952 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-10-26 03:25:52,933 basehttp 52328 47952 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-26 03:25:56,567 basehttp 52328 47952 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-26 03:25:58,430 basehttp 52328 25224 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-10-26 03:42:39,009 autoreload 52328 40892 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-26 03:42:41,302 autoreload 41572 1536 Watching for file changes with StatReloader
+INFO 2025-10-26 03:47:09,677 autoreload 41572 1536 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-26 03:47:11,898 autoreload 33276 17508 Watching for file changes with StatReloader
+INFO 2025-10-26 03:48:01,448 autoreload 6992 20820 Watching for file changes with StatReloader
+INFO 2025-10-26 03:51:02,177 autoreload 6992 20820 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\utils\file_preview.py changed, reloading.
+INFO 2025-10-26 03:51:03,900 autoreload 24684 51232 Watching for file changes with StatReloader
+INFO 2025-10-26 03:52:41,737 autoreload 40148 31188 Watching for file changes with StatReloader
+INFO 2025-10-26 04:06:12,899 autoreload 6268 3456 Watching for file changes with StatReloader
+INFO 2025-10-26 04:24:16,324 autoreload 18700 52664 Watching for file changes with StatReloader
+INFO 2025-10-26 04:24:24,310 autoreload 18700 52664 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-26 04:24:26,140 autoreload 46020 50092 Watching for file changes with StatReloader
+INFO 2025-10-26 04:26:57,284 autoreload 50328 28904 Watching for file changes with StatReloader
+INFO 2025-10-26 04:27:12,380 autoreload 50328 28904 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-26 04:27:13,880 autoreload 38384 11732 Watching for file changes with StatReloader
+INFO 2025-10-26 04:27:21,838 autoreload 38384 11732 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-26 04:27:23,649 autoreload 27472 50764 Watching for file changes with StatReloader
+INFO 2025-10-26 04:27:31,407 autoreload 27472 50764 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\urls.py changed, reloading.
+INFO 2025-10-26 04:27:32,871 autoreload 26160 25872 Watching for file changes with StatReloader
+INFO 2025-10-26 04:27:37,491 basehttp 26160 52172 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-10-26 04:27:38,011 basehttp 26160 52172 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-26 04:27:40,822 basehttp 26160 52172 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-10-26 04:27:52,598 basehttp 26160 11484 "GET / HTTP/1.1" 200 50517
+INFO 2025-10-26 19:43:25,771 basehttp 26160 12072 "GET /timetable/ HTTP/1.1" 200 33172
+INFO 2025-10-26 19:43:31,188 basehttp 26160 12072 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-26 19:43:31,291 basehttp 26160 12072 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 304 0
+INFO 2025-10-26 19:43:33,040 basehttp 26160 12072 "GET /activities/ HTTP/1.1" 200 143101
+INFO 2025-10-26 19:43:34,475 basehttp 26160 12072 "GET /activities/resources/ HTTP/1.1" 200 190123
+INFO 2025-10-26 19:43:36,686 basehttp 26160 12072 "GET / HTTP/1.1" 200 52308
+INFO 2025-10-26 19:43:39,507 basehttp 26160 12072 "GET /timetable/ HTTP/1.1" 200 33172
+INFO 2025-10-26 19:46:24,395 basehttp 26160 12072 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 19:46:24,426 basehttp 26160 12072 "GET /timetable/ HTTP/1.1" 200 35150
+INFO 2025-10-26 19:57:40,231 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 19:57:40,252 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 37560
+INFO 2025-10-26 19:58:41,423 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 19:58:41,449 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 39532
+INFO 2025-10-26 19:59:55,078 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 19:59:55,102 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 41969
+INFO 2025-10-26 20:01:01,891 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 20:01:01,940 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 43938
+INFO 2025-10-26 20:02:30,831 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 20:02:30,858 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 45911
+INFO 2025-10-26 20:03:49,478 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 20:03:49,513 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 48338
+INFO 2025-10-26 20:05:20,430 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 20:05:20,461 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 50303
+INFO 2025-10-26 20:06:11,445 basehttp 26160 40172 "POST /timetable/ HTTP/1.1" 302 0
+INFO 2025-10-26 20:06:11,482 basehttp 26160 40172 "GET /timetable/ HTTP/1.1" 200 52261
+INFO 2025-10-26 20:07:30,660 basehttp 26160 40172 "POST /timetable/generate-schedule/ HTTP/1.1" 200 92
+INFO 2025-10-26 20:07:36,041 basehttp 26160 40172 - Broken pipe from ('127.0.0.1', 65018)
+INFO 2025-10-26 20:07:36,613 basehttp 26160 47660 "GET / HTTP/1.1" 200 52288
+INFO 2025-10-26 20:18:13,402 basehttp 26160 43944 "GET /timetable/ HTTP/1.1" 200 52261
+INFO 2025-10-26 20:29:18,915 autoreload 26160 25872 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\core\views.py changed, reloading.
+INFO 2025-10-26 20:29:29,859 autoreload 5704 38512 Watching for file changes with StatReloader
+INFO 2025-10-26 20:29:42,945 basehttp 5704 50520 "GET /timetable/ HTTP/1.1" 200 55166
+INFO 2025-10-26 20:31:59,414 basehttp 5704 44936 "GET / HTTP/1.1" 200 52288
+INFO 2025-10-26 20:32:05,930 basehttp 5704 26912 "GET /?day=2025-10-27 HTTP/1.1" 200 56533
+INFO 2025-10-26 20:51:44,920 basehttp 5704 39348 "GET /timetable/ HTTP/1.1" 200 55166
+INFO 2025-10-26 20:52:58,137 basehttp 5704 47488 "GET / HTTP/1.1" 200 52288
+INFO 2025-10-26 20:54:25,551 basehttp 5704 47488 "GET /activities/resources/?type= HTTP/1.1" 200 190123
+INFO 2025-10-26 20:58:24,765 basehttp 5704 39168 "POST /toggle-dark-mode/ HTTP/1.1" 200 77
+INFO 2025-10-26 20:58:29,081 basehttp 5704 39168 "GET / HTTP/1.1" 200 52290
+INFO 2025-10-26 20:58:33,485 basehttp 5704 39168 "POST /toggle-dark-mode/ HTTP/1.1" 200 78
+INFO 2025-10-26 20:58:34,598 basehttp 5704 39168 "POST /toggle-dark-mode/ HTTP/1.1" 200 77
+INFO 2025-10-26 20:58:38,004 basehttp 5704 39168 "GET /class-notes/ HTTP/1.1" 200 54080
+INFO 2025-10-26 20:58:38,766 basehttp 5704 39168 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-26 20:58:43,836 basehttp 5704 39168 "GET /profile/ HTTP/1.1" 200 45998
+INFO 2025-10-26 20:58:58,877 basehttp 5704 39168 "GET /class-notes/ HTTP/1.1" 200 54080
+INFO 2025-10-26 20:58:59,832 basehttp 5704 39168 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-26 20:59:04,222 basehttp 5704 39168 "POST /toggle-dark-mode/ HTTP/1.1" 200 78
+INFO 2025-10-26 20:59:05,970 basehttp 5704 39168 "POST /class-notes/launch-vscode/ HTTP/1.1" 200 56
+INFO 2025-10-26 20:59:27,734 basehttp 5704 39168 "GET /class-notes/get-folder-content/?folder=new HTTP/1.1" 200 83
+INFO 2025-10-26 20:59:34,277 basehttp 5704 46412 "GET /class-notes/get-file-content/?filename=asgi.py&folder=new HTTP/1.1" 200 463
+INFO 2025-10-26 20:59:36,915 basehttp 5704 46412 "POST /class-notes/generate-summary/ HTTP/1.1" 200 393
+INFO 2025-10-26 20:59:54,614 basehttp 5704 46412 "POST /toggle-dark-mode/ HTTP/1.1" 200 77
+INFO 2025-10-26 20:59:56,716 basehttp 5704 46412 "POST /toggle-dark-mode/ HTTP/1.1" 200 78
+INFO 2025-10-26 21:00:07,524 basehttp 5704 49596 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-28 01:01:53,728 basehttp 5704 8572 "GET / HTTP/1.1" 200 58384
+INFO 2025-10-28 01:02:04,879 basehttp 5704 8572 "GET /activities/resources/ HTTP/1.1" 200 196097
+INFO 2025-10-28 01:02:19,486 basehttp 5704 8572 "GET /activities/ HTTP/1.1" 200 160533
+INFO 2025-10-28 01:02:39,877 basehttp 5704 34868 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-10-28 01:02:39,944 basehttp 5704 34868 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 304 0
+INFO 2025-10-28 01:03:00,442 basehttp 5704 34868 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-10-28 01:03:00,677 basehttp 5704 34868 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-28 01:03:13,361 basehttp 5704 36752 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041

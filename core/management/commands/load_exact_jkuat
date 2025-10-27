@@ -1,0 +1,137 @@
+from django.core.management.base import BaseCommand
+from django.contrib.auth.models import User
+from core.models import Schedule
+from datetime import time
+
+class Command(BaseCommand):
+    help = 'Load EXACT JKUAT BIT 2.1 timetable'
+    
+    def handle(self, *args, **options):
+        user = User.objects.get(username='Mark')
+        
+        # Clear existing schedule
+        Schedule.objects.filter(user=user).delete()
+        
+        # EXACT JKUAT TIMETABLE
+        jkuat_schedule = [
+            # ==================== MONDAY ====================
+            {'day': 'Monday', 'start_time': '06:00', 'end_time': '07:00', 
+             'title': '🌅 Morning Routine & Breakfast', 'activity_type': 'meal', 'location': 'Home'},
+            
+            {'day': 'Monday', 'start_time': '10:00', 'end_time': '13:00', 
+             'title': 'ICS 2203 - Web Application Development I (Lab)', 'activity_type': 'lab', 'location': 'Lab 7'},
+            
+            {'day': 'Monday', 'start_time': '14:00', 'end_time': '17:00', 
+             'title': 'ICS 2302 - Software Engineering I (Lab)', 'activity_type': 'lab', 'location': 'Lab 7'},
+            
+            {'day': 'Monday', 'start_time': '17:00', 'end_time': '19:00', 
+             'title': 'BIT 2214 - Object Oriented Systems & Design (Lecture)', 'activity_type': 'lecture', 'location': 'Hall 2'},
+            
+            {'day': 'Monday', 'start_time': '19:00', 'end_time': '20:00', 
+             'title': '🍽️ Dinner', 'activity_type': 'meal', 'location': 'Home'},
+            
+            {'day': 'Monday', 'start_time': '20:00', 'end_time': '22:00', 
+             'title': '🚀 Web Dev Practice (HTML/CSS)', 'activity_type': 'skill', 'location': 'Home'},
+
+            # ==================== TUESDAY ====================
+            {'day': 'Tuesday', 'start_time': '06:00', 'end_time': '07:00', 
+             'title': '🌅 Morning Routine & Breakfast', 'activity_type': 'meal', 'location': 'Home'},
+            
+            {'day': 'Tuesday', 'start_time': '07:00', 'end_time': '09:00', 
+             'title': 'ICS 2206 - Database Management Systems (Lab)', 'activity_type': 'lab', 'location': 'Lab 6'},
+            
+            {'day': 'Tuesday', 'start_time': '10:00', 'end_time': '13:00', 
+             'title': 'SMA 2101 - Calculus I (Lecture)', 'activity_type': 'lecture', 'location': 'CTC LH 1'},
+            
+            {'day': 'Tuesday', 'start_time': '14:00', 'end_time': '17:00', 
+             'title': 'ICS 2104 - Object Oriented Programming I (Lab)', 'activity_type': 'lab', 'location': 'Lab 7'},
+            
+            {'day': 'Tuesday', 'start_time': '17:00', 'end_time': '19:00', 
+             'title': 'BIT 2324 - Geographical Information Systems (Lecture)', 'activity_type': 'lecture', 'location': 'Hall 3'},
+            
+            {'day': 'Tuesday', 'start_time': '19:00', 'end_time': '21:00', 
+             'title': '💪 Gym Workout', 'activity_type': 'workout', 'location': 'Campus Gym'},
+
+            # ==================== WEDNESDAY ====================
+            {'day': 'Wednesday', 'start_time': '06:00', 'end_time': '07:00', 
+             'title': '🌅 Morning Routine & Breakfast', 'activity_type': 'meal', 'location': 'Home'},
+            
+            {'day': 'Wednesday', 'start_time': '07:00', 'end_time': '10:00', 
+             'title': 'BIT 2223 - Mobile Computing (Lecture)', 'activity_type': 'lecture', 'location': 'CTC 207'},
+            
+            {'day': 'Wednesday', 'start_time': '11:00', 'end_time': '13:00', 
+             'title': 'ICS 2203 - Web Application Development I (Lecture)', 'activity_type': 'lecture', 'location': 'LH 1'},
+            
+            {'day': 'Wednesday', 'start_time': '14:00', 'end_time': '17:00', 
+             'title': '📚 Self-Study: Web Dev & Mobile Computing', 'activity_type': 'study', 'location': 'Library'},
+            
+            {'day': 'Wednesday', 'start_time': '17:00', 'end_time': '18:00', 
+             'title': '💪 Gym Workout', 'activity_type': 'workout', 'location': 'Campus Gym'},
+
+            # ==================== THURSDAY ====================
+            {'day': 'Thursday', 'start_time': '06:00', 'end_time': '07:00', 
+             'title': '🌅 Morning Routine & Breakfast', 'activity_type': 'meal', 'location': 'Home'},
+            
+            {'day': 'Thursday', 'start_time': '07:00', 'end_time': '10:00', 
+             'title': 'ICS 2206 - Database Management Systems (Lab)', 'activity_type': 'lab', 'location': 'Lab 6'},
+            
+            {'day': 'Thursday', 'start_time': '10:00', 'end_time': '12:00', 
+             'title': 'ICS 2104 - Object Oriented Programming I (Lab)', 'activity_type': 'lab', 'location': 'Lab 7'},
+            
+            {'day': 'Thursday', 'start_time': '14:00', 'end_time': '17:00', 
+             'title': 'BIT 2324 - Geographical Information Systems (Lab)', 'activity_type': 'lab', 'location': 'Lab 4'},
+            
+            {'day': 'Thursday', 'start_time': '17:00', 'end_time': '18:00', 
+             'title': '💪 Gym Workout', 'activity_type': 'workout', 'location': 'Campus Gym'},
+
+            # ==================== FRIDAY ====================
+            {'day': 'Friday', 'start_time': '06:00', 'end_time': '07:00', 
+             'title': '🌅 Morning Routine & Breakfast', 'activity_type': 'meal', 'location': 'Home'},
+            
+            {'day': 'Friday', 'start_time': '07:00', 'end_time': '10:00', 
+             'title': 'BIT 2214 - Object Oriented Systems & Design (Lab)', 'activity_type': 'lab', 'location': 'Lab 5'},
+            
+            {'day': 'Friday', 'start_time': '11:00', 'end_time': '13:00', 
+             'title': 'ICS 2302 - Software Engineering I (Lecture)', 'activity_type': 'lecture', 'location': 'CTC 207'},
+            
+            {'day': 'Friday', 'start_time': '15:00', 'end_time': '17:00', 
+             'title': 'BIT 2223 - Mobile Computing (Lecture)', 'activity_type': 'lecture', 'location': 'CTC 207'},
+            
+            {'day': 'Friday', 'start_time': '17:00', 'end_time': '18:00', 
+             'title': '💪 Gym Workout', 'activity_type': 'workout', 'location': 'Campus Gym'},
+
+            # ==================== SATURDAY ====================
+            {'day': 'Saturday', 'start_time': '08:00', 'end_time': '12:00', 
+             'title': '🚀 Deep Project Work (Portfolio)', 'activity_type': 'project', 'location': 'Library'},
+            
+            {'day': 'Saturday', 'start_time': '14:00', 'end_time': '17:00', 
+             'title': '📚 Study Group Session', 'activity_type': 'study', 'location': 'Library'},
+            
+            {'day': 'Saturday', 'start_time': '17:00', 'end_time': '19:00', 
+             'title': '👥 Social & Relationship Time', 'activity_type': 'relationship', 'location': 'Campus'},
+
+            # ==================== SUNDAY ====================
+            {'day': 'Sunday', 'start_time': '09:00', 'end_time': '11:00', 
+             'title': '🧹 House Cleaning & Laundry', 'activity_type': 'chore', 'location': 'Home'},
+            
+            {'day': 'Sunday', 'start_time': '14:00', 'end_time': '15:00', 
+             'title': '📊 Weekly Review & Goal Setting', 'activity_type': 'review', 'location': 'Home'},
+            
+            {'day': 'Sunday', 'start_time': '16:00', 'end_time': '18:00', 
+             'title': '👥 Family & Social Time', 'activity_type': 'relationship', 'location': 'Home'},
+        ]
+        
+        # Create schedule items
+        for item_data in jkuat_schedule:
+            Schedule.objects.create(
+                user=user,
+                title=item_data['title'],
+                day=item_data['day'],
+                start_time=time(int(item_data['start_time'].split(':')[0]), int(item_data['start_time'].split(':')[1])),
+                end_time=time(int(item_data['end_time'].split(':')[0]), int(item_data['end_time'].split(':')[1])),
+                activity_type=item_data['activity_type'],
+                location=item_data['location']
+            )
+        
+        self.stdout.write(self.style.SUCCESS(f'✅ Loaded {len(jkuat_schedule)} EXACT JKUAT activities!'))
+        self.stdout.write(self.style.SUCCESS('🎉 Your REAL timetable with gym, study, meals is ready!'))

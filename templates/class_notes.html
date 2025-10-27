@@ -1,0 +1,1160 @@
+{% extends 'base.html' %}
+{% load file_filters %}
+
+{% block title %}Class Notes - Beast Mode Planner{% endblock %}
+
+{% block content %}
+<style>
+    /* Full-screen background styling */
+    .full-screen-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                    url('https://w0.peakpx.com/wallpaper/179/500/HD-wallpaper-scholar-shine.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: -1;
+    }
+    
+    /* Enhanced glass panel effect */
+    .enhanced-glass-panel {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    }
+    
+    /* Enhanced glass card effect */
+    .enhanced-glass-card {
+        background: rgba(30, 41, 59, 0.5);
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .enhanced-glass-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(59, 130, 246, 0.5);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Improved neon button */
+    .btn-neon-enhanced {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        color: #e2e8f0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn-neon-enhanced:hover {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+        border-color: rgba(59, 130, 246, 0.7);
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        color: white;
+    }
+    
+    /* Improved input styling */
+    .enhanced-terminal-input {
+        background: rgba(30, 41, 59, 0.7);
+        border: 1px solid rgba(74, 85, 104, 0.5);
+        color: #e2e8f0;
+        transition: all 0.3s ease;
+    }
+    
+    .enhanced-terminal-input:focus {
+        background: rgba(30, 41, 59, 0.9);
+        border-color: rgba(59, 130, 246, 0.7);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        color: white;
+    }
+    
+    /* Section headers */
+    .section-header {
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .section-header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        border-radius: 3px;
+    }
+    
+    /* Status message improvements */
+    .status-success {
+        background: rgba(16, 185, 129, 0.9);
+        color: white;
+        border-left: 4px solid #10b981;
+    }
+    
+    .status-error {
+        background: rgba(239, 68, 68, 0.9);
+        color: white;
+        border-left: 4px solid #ef4444;
+    }
+    
+    /* File type icons */
+    .file-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-right: 12px;
+    }
+    
+    .txt-icon {
+        background: rgba(34, 197, 94, 0.2);
+        color: #22c55e;
+    }
+    
+    .pdf-icon {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+    }
+    
+    .doc-icon {
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+    }
+    
+    .html-icon {
+        background: rgba(245, 158, 11, 0.2);
+        color: #f59e0b;
+    }
+    
+    .excel-icon {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+    }
+    
+    .csv-icon {
+        background: rgba(139, 92, 246, 0.2);
+        color: #8b5cf6;
+    }
+    
+    .image-icon {
+        background: rgba(236, 72, 153, 0.2);
+        color: #ec4899;
+    }
+    
+    .default-icon {
+        background: rgba(107, 114, 128, 0.2);
+        color: #6b7280;
+    }
+    
+    /* Folder icons */
+    .folder-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-right: 15px;
+        background: rgba(245, 158, 11, 0.2);
+        color: #f59e0b;
+    }
+    
+    /* Action buttons in file list */
+    .file-action-btn {
+        opacity: 0.7;
+        transition: all 0.2s ease;
+    }
+    
+    .file-action-btn:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    
+    /* Preview Modal Styling */
+    .preview-modal {
+        max-width: 90%;
+        width: 1000px;
+        height: 90vh;
+    }
+    
+    .preview-content {
+        height: calc(100% - 120px);
+        overflow-y: auto;
+    }
+    
+    .file-content {
+        white-space: pre-wrap;
+        font-family: 'Courier New', monospace;
+        line-height: 1.5;
+        background: rgba(30, 41, 59, 0.8);
+        padding: 15px;
+        border-radius: 8px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    .summary-section {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 15px;
+    }
+    
+    .summary-content {
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .tab-button {
+        background: transparent;
+        border: none;
+        padding: 10px 20px;
+        color: #94a3b8;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .tab-button.active {
+        color: #3b82f6;
+        border-bottom-color: #3b82f6;
+    }
+    
+    .tab-content {
+        display: none;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+    
+    .loading-spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 10px;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    /* Breadcrumb styling */
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+    
+    .breadcrumb-item {
+        color: #94a3b8;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    
+    .breadcrumb-item:hover {
+        color: #3b82f6;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 10px;
+        color: #64748b;
+    }
+    
+    .current-folder {
+        color: #3b82f6;
+        font-weight: 600;
+    }
+    
+    /* Folder navigation highlight */
+    .active-folder {
+        border-color: rgba(59, 130, 246, 0.7) !important;
+        background: rgba(59, 130, 246, 0.1);
+    }
+    
+    /* File type badges */
+    .file-type-badge {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 12px;
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+        margin-left: 8px;
+    }
+</style>
+
+<!-- Full-screen background -->
+<div class="full-screen-bg"></div>
+
+<div class="container mx-auto px-4 py-6 relative z-10">
+    <!-- Header -->
+    <div class="enhanced-glass-panel p-6 mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-3xl md:text-4xl font-bold terminal-header mb-2">
+                    <i class="fas fa-book-open mr-3 text-blue-400"></i>
+                    Class Notes Manager
+                </h1>
+                <p class="terminal-text text-lg">Organize and manage your class notes efficiently</p>
+            </div>
+            <button onclick="launchVSCode()" 
+                    class="btn-neon-enhanced font-semibold py-3 px-6 rounded-lg flex items-center">
+                <i class="fas fa-code mr-2"></i>
+                Launch VS Code
+            </button>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb enhanced-glass-panel p-4 mb-6">
+        <span class="breadcrumb-item" onclick="navigateToFolder('')">
+            <i class="fas fa-home mr-2"></i>Root
+        </span>
+        <span id="breadcrumbContent"></span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar - Actions -->
+        <div class="lg:col-span-1">
+            <div class="enhanced-glass-panel p-6 sticky top-6">
+                <h3 class="text-xl font-semibold terminal-header section-header">Quick Actions</h3>
+                
+                <!-- Create Folder Form -->
+                <div class="mb-8">
+                    <h4 class="text-md font-medium text-gray-300 mb-4 flex items-center">
+                        <i class="fas fa-folder-plus mr-2 text-yellow-400"></i>
+                        Create New Folder
+                    </h4>
+                    <div class="space-y-4">
+                        <input type="text" id="folderName" placeholder="Enter folder name" 
+                               class="enhanced-terminal-input w-full p-3 rounded-lg">
+                        <button onclick="createFolder()" 
+                                class="btn-neon-enhanced w-full font-medium py-3 px-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-folder-plus mr-2"></i>
+                            Create Folder
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upload File Form -->
+                <div class="mb-8">
+                    <h4 class="text-md font-medium text-gray-300 mb-4 flex items-center">
+                        <i class="fas fa-upload mr-2 text-green-400"></i>
+                        Upload File
+                    </h4>
+                    <div class="space-y-4">
+                        <select id="uploadFolder" class="enhanced-terminal-input w-full p-3 rounded-lg">
+                            <option value="">Root Directory</option>
+                            {% for folder in folders %}
+                            <option value="{{ folder.name }}">{{ folder.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="file" id="fileInput" 
+                               class="enhanced-terminal-input w-full p-3 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-500/20 file:text-green-400 hover:file:bg-green-500/30">
+                        <button onclick="uploadFile()" 
+                                class="btn-neon-enhanced w-full font-medium py-3 px-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-upload mr-2"></i>
+                            Upload File
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Create File Form -->
+                <div>
+                    <h4 class="text-md font-medium text-gray-300 mb-4 flex items-center">
+                        <i class="fas fa-file-plus mr-2 text-blue-400"></i>
+                        Create New File
+                    </h4>
+                    <div class="space-y-4">
+                        <select id="createFileFolder" class="enhanced-terminal-input w-full p-3 rounded-lg">
+                            <option value="">Root Directory</option>
+                            {% for folder in folders %}
+                            <option value="{{ folder.name }}">{{ folder.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="text" id="fileName" placeholder="Enter filename (e.g., notes.txt)" 
+                               class="enhanced-terminal-input w-full p-3 rounded-lg">
+                        <textarea id="fileContent" placeholder="File content (optional)" 
+                                  class="enhanced-terminal-input w-full h-32 p-3 rounded-lg resize-none"></textarea>
+                        <button onclick="createFile()" 
+                                class="btn-neon-enhanced w-full font-medium py-3 px-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-file-plus mr-2"></i>
+                            Create File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content - Folders and Files -->
+        <div class="lg:col-span-3">
+            <!-- Current Folder Info -->
+            <div class="enhanced-glass-panel p-4 mb-6 flex justify-between items-center">
+                <div>
+                    <h3 id="currentFolderTitle" class="text-xl font-semibold terminal-header">
+                        <i class="fas fa-folder mr-2 text-yellow-400"></i>
+                        All Folders & Files
+                    </h3>
+                    <p id="folderStats" class="text-gray-400">
+                        {{ folders|length }} folders, {{ files|length }} files
+                    </p>
+                </div>
+                <button onclick="refreshContent()" class="btn-neon-enhanced py-2 px-4 rounded-lg flex items-center">
+                    <i class="fas fa-sync-alt mr-2"></i>
+                    Refresh
+                </button>
+            </div>
+
+            <!-- Folders Section -->
+            <div class="enhanced-glass-panel p-6 mb-8">
+                <h3 class="text-xl font-semibold terminal-header section-header flex items-center">
+                    <i class="fas fa-folder mr-3 text-yellow-400"></i>
+                    Folders
+                </h3>
+                
+                <div id="foldersContainer">
+                    {% if folders %}
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {% for folder in folders %}
+                        <div class="enhanced-glass-card p-5 cursor-pointer folder-item"
+                             data-folder-name="{{ folder.name }}"
+                             onclick="navigateToFolder('{{ folder.name }}')">
+                            <div class="flex items-center">
+                                <div class="folder-icon">
+                                    <i class="fas fa-folder text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold terminal-text text-lg">{{ folder.name }}</h4>
+                                    <p class="text-sm text-gray-400">{{ folder.file_count }} files</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="text-center py-10 text-gray-400">
+                        <i class="fas fa-folder-open text-5xl mb-4 text-gray-500"></i>
+                        <p class="text-lg">No folders created yet</p>
+                        <p class="text-sm mt-2">Create your first folder to get started</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Files Section -->
+            <div class="enhanced-glass-panel p-6">
+                <h3 class="text-xl font-semibold terminal-header section-header flex items-center">
+                    <i class="fas fa-file mr-3 text-green-400"></i>
+                    Files
+                </h3>
+                
+                <div id="filesContainer">
+                    {% if files %}
+                    <div class="space-y-4">
+                        {% for file in files %}
+                        <div class="flex items-center justify-between p-4 enhanced-glass-card rounded-lg cursor-pointer file-item"
+                             data-file-name="{{ file.name }}"
+                             onclick="previewFile('{{ file.name }}')">
+                            <div class="flex items-center">
+                                {% if file.name|endswith:'.txt' %}
+                                    <div class="file-icon txt-icon">
+                                        <i class="fas fa-file-text text-xl"></i>
+                                    </div>
+                                {% elif file.name|endswith:'.pdf' %}
+                                    <div class="file-icon pdf-icon">
+                                        <i class="fas fa-file-pdf text-xl"></i>
+                                    </div>
+                                {% elif file.name|endswith:'.doc' or file.name|endswith:'.docx' %}
+                                    <div class="file-icon doc-icon">
+                                        <i class="fas fa-file-word text-xl"></i>
+                                    </div>
+                                {% elif file.name|endswith:'.html' or file.name|endswith:'.htm' %}
+                                    <div class="file-icon html-icon">
+                                        <i class="fas fa-file-code text-xl"></i>
+                                    </div>
+                                {% elif file.name|endswith:'.xls' or file.name|endswith:'.xlsx' %}
+                                    <div class="file-icon excel-icon">
+                                        <i class="fas fa-file-excel text-xl"></i>
+                                    </div>
+                                {% elif file.name|endswith:'.csv' %}
+                                    <div class="file-icon csv-icon">
+                                        <i class="fas fa-file-csv text-xl"></i>
+                                    </div>
+                                {% elif file.name|endswith:'.jpg' or file.name|endswith:'.jpeg' or file.name|endswith:'.png' or file.name|endswith:'.gif' %}
+                                    <div class="file-icon image-icon">
+                                        <i class="fas fa-file-image text-xl"></i>
+                                    </div>
+                                {% else %}
+                                    <div class="file-icon default-icon">
+                                        <i class="fas fa-file text-xl"></i>
+                                    </div>
+                                {% endif %}
+                                <div>
+                                    <h4 class="font-medium terminal-text">{{ file.name }}</h4>
+                                    <p class="text-sm text-gray-400">{{ file.size|filesizeformat }}</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button onclick="event.stopPropagation(); downloadFile('{{ file.name }}')" 
+                                        class="text-blue-400 file-action-btn p-2">
+                                    <i class="fas fa-download text-lg"></i>
+                                </button>
+                                <button onclick="event.stopPropagation(); previewFile('{{ file.name }}')" 
+                                        class="text-green-400 file-action-btn p-2">
+                                    <i class="fas fa-eye text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="text-center py-10 text-gray-400">
+                        <i class="fas fa-file-alt text-5xl mb-4 text-gray-500"></i>
+                        <p class="text-lg">No files uploaded yet</p>
+                        <p class="text-sm mt-2">Upload your first class note to get started</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Status Messages -->
+<div id="statusMessage" class="fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 hidden">
+    <div class="flex items-center">
+        <i id="statusIcon" class="fas fa-info-circle mr-3 text-lg"></i>
+        <span id="statusText" class="font-medium"></span>
+    </div>
+</div>
+
+<!-- File Preview Modal -->
+<div id="filePreviewModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div class="enhanced-glass-panel p-6 preview-modal mx-4">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold terminal-header" id="previewFileName">File Preview</h3>
+            <button onclick="closePreviewModal()" class="text-gray-400 hover:text-white text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- File Info -->
+        <div class="flex items-center mb-4 p-3 enhanced-glass-card rounded-lg">
+            <div id="previewFileIcon" class="file-icon mr-3">
+                <i class="fas fa-file text-xl"></i>
+            </div>
+            <div>
+                <h4 id="previewFileTitle" class="font-medium"></h4>
+                <p id="previewFileInfo" class="text-sm text-gray-400"></p>
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="flex border-b border-gray-700 mb-4">
+            <button class="tab-button active" data-tab="content">File Content</button>
+            <button class="tab-button" data-tab="summary">AI Summary</button>
+        </div>
+        
+        <div class="preview-content">
+            <!-- File Content Tab -->
+            <div id="content-tab" class="tab-content active">
+                <div class="file-content" id="fileContentDisplay">
+                    Loading file content...
+                </div>
+            </div>
+            
+            <!-- Summary Tab -->
+            <div id="summary-tab" class="tab-content">
+                <div class="summary-section">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="text-lg font-medium">AI Summary</h4>
+                        <button onclick="generateSummary()" class="btn-neon-enhanced py-2 px-4 rounded-lg flex items-center">
+                            <i class="fas fa-robot mr-2"></i>
+                            Generate Summary
+                        </button>
+                    </div>
+                    <div class="summary-content" id="summaryDisplay">
+                        <p class="text-gray-400">No summary generated yet. Click "Generate Summary" to create one.</p>
+                    </div>
+                </div>
+                
+                <div class="summary-section mt-6">
+                    <h4 class="text-lg font-medium mb-3">Key Points</h4>
+                    <div class="summary-content" id="keyPointsDisplay">
+                        <p class="text-gray-400">Key points will appear here after generating a summary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex justify-end space-x-3 mt-4">
+            <button onclick="downloadCurrentFile()" class="btn-neon-enhanced py-2 px-4 rounded-lg flex items-center">
+                <i class="fas fa-download mr-2"></i>
+                Download
+            </button>
+            <button onclick="closePreviewModal()" class="px-4 py-2 text-gray-400 hover:text-gray-300 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Current file being previewed
+let currentPreviewFile = '';
+let currentFolder = '';
+
+// Show status message
+function showStatus(message, type = 'success') {
+    const statusEl = document.getElementById('statusMessage');
+    const statusIcon = document.getElementById('statusIcon');
+    const statusText = document.getElementById('statusText');
+    
+    statusText.textContent = message;
+    
+    if (type === 'success') {
+        statusEl.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 status-success flex items-center';
+        statusIcon.className = 'fas fa-check-circle mr-3 text-lg';
+    } else {
+        statusEl.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 status-error flex items-center';
+        statusIcon.className = 'fas fa-exclamation-circle mr-3 text-lg';
+    }
+    
+    statusEl.classList.remove('hidden');
+    setTimeout(() => {
+        statusEl.classList.add('hidden');
+    }, 5000);
+}
+
+// Navigate to folder
+function navigateToFolder(folderName) {
+    currentFolder = folderName;
+    updateBreadcrumb(folderName);
+    updateFolderSelection(folderName);
+    loadFolderContent(folderName);
+}
+
+// Update breadcrumb
+function updateBreadcrumb(folderName) {
+    const breadcrumb = document.getElementById('breadcrumbContent');
+    
+    if (!folderName) {
+        breadcrumb.innerHTML = '';
+        document.getElementById('currentFolderTitle').innerHTML = '<i class="fas fa-folder mr-2 text-yellow-400"></i>All Folders & Files';
+        document.getElementById('folderStats').textContent = 'All folders and files';
+        return;
+    }
+    
+    breadcrumb.innerHTML = `
+        <span class="breadcrumb-separator">/</span>
+        <span class="current-folder">${folderName}</span>
+    `;
+    
+    document.getElementById('currentFolderTitle').innerHTML = `<i class="fas fa-folder-open mr-2 text-yellow-400"></i>${folderName}`;
+    document.getElementById('folderStats').textContent = `Viewing files in ${folderName}`;
+}
+
+// Update folder selection in dropdowns
+function updateFolderSelection(folderName) {
+    document.getElementById('uploadFolder').value = folderName;
+    document.getElementById('createFileFolder').value = folderName;
+    
+    // Update active folder highlight
+    document.querySelectorAll('.folder-item').forEach(item => {
+        item.classList.remove('active-folder');
+        if (item.getAttribute('data-folder-name') === folderName) {
+            item.classList.add('active-folder');
+        }
+    });
+}
+
+// Load folder content
+function loadFolderContent(folderName) {
+    const foldersContainer = document.getElementById('foldersContainer');
+    const filesContainer = document.getElementById('filesContainer');
+    
+    // Show loading state
+    foldersContainer.innerHTML = `
+        <div class="text-center py-8">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-400">Loading folders...</p>
+        </div>
+    `;
+    
+    filesContainer.innerHTML = `
+        <div class="text-center py-8">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-400">Loading files...</p>
+        </div>
+    `;
+    
+    // Fetch folder content
+    fetch(`/class-notes/get-folder-content/?folder=${encodeURIComponent(folderName)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                renderFolders(data.folders);
+                renderFiles(data.files);
+            } else {
+                showStatus('Error loading folder content: ' + data.error, 'error');
+                renderFolders([]);
+                renderFiles([]);
+            }
+        })
+        .catch(error => {
+            showStatus('Error loading folder content: ' + error, 'error');
+            console.error('Error:', error);
+            renderFolders([]);
+            renderFiles([]);
+        });
+}
+
+// Render folders
+function renderFolders(folders) {
+    const foldersContainer = document.getElementById('foldersContainer');
+    
+    if (folders && folders.length > 0) {
+        let foldersHTML = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">';
+        
+        folders.forEach(folder => {
+            const isActive = folder.name === currentFolder ? 'active-folder' : '';
+            foldersHTML += `
+                <div class="enhanced-glass-card p-5 cursor-pointer folder-item ${isActive}"
+                     data-folder-name="${folder.name}"
+                     onclick="navigateToFolder('${folder.name}')">
+                    <div class="flex items-center">
+                        <div class="folder-icon">
+                            <i class="fas fa-folder text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold terminal-text text-lg">${folder.name}</h4>
+                            <p class="text-sm text-gray-400">${folder.file_count || 0} files</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        foldersHTML += '</div>';
+        foldersContainer.innerHTML = foldersHTML;
+    } else {
+        foldersContainer.innerHTML = `
+            <div class="text-center py-10 text-gray-400">
+                <i class="fas fa-folder-open text-5xl mb-4 text-gray-500"></i>
+                <p class="text-lg">No subfolders found</p>
+                <p class="text-sm mt-2">Create a new folder to organize your files</p>
+            </div>
+        `;
+    }
+}
+
+// Render files
+function renderFiles(files) {
+    const filesContainer = document.getElementById('filesContainer');
+    
+    if (files && files.length > 0) {
+        let filesHTML = '<div class="space-y-4">';
+        
+        files.forEach(file => {
+            let fileIcon = '';
+            let fileType = '';
+            
+            if (file.name.includes('.txt')) {
+                fileIcon = '<div class="file-icon txt-icon"><i class="fas fa-file-text text-xl"></i></div>';
+                fileType = 'TXT';
+            } else if (file.name.includes('.pdf')) {
+                fileIcon = '<div class="file-icon pdf-icon"><i class="fas fa-file-pdf text-xl"></i></div>';
+                fileType = 'PDF';
+            } else if (file.name.includes('.doc') || file.name.includes('.docx')) {
+                fileIcon = '<div class="file-icon doc-icon"><i class="fas fa-file-word text-xl"></i></div>';
+                fileType = 'DOC';
+            } else if (file.name.includes('.html') || file.name.includes('.htm')) {
+                fileIcon = '<div class="file-icon html-icon"><i class="fas fa-file-code text-xl"></i></div>';
+                fileType = 'HTML';
+            } else if (file.name.includes('.xls') || file.name.includes('.xlsx')) {
+                fileIcon = '<div class="file-icon excel-icon"><i class="fas fa-file-excel text-xl"></i></div>';
+                fileType = 'Excel';
+            } else if (file.name.includes('.csv')) {
+                fileIcon = '<div class="file-icon csv-icon"><i class="fas fa-file-csv text-xl"></i></div>';
+                fileType = 'CSV';
+            } else if (file.name.includes('.jpg') || file.name.includes('.jpeg') || file.name.includes('.png') || file.name.includes('.gif')) {
+                fileIcon = '<div class="file-icon image-icon"><i class="fas fa-file-image text-xl"></i></div>';
+                fileType = 'Image';
+            } else {
+                fileIcon = '<div class="file-icon default-icon"><i class="fas fa-file text-xl"></i></div>';
+                fileType = file.name.split('.').pop().toUpperCase();
+            }
+            
+            filesHTML += `
+                <div class="flex items-center justify-between p-4 enhanced-glass-card rounded-lg cursor-pointer file-item"
+                     data-file-name="${file.name}"
+                     onclick="previewFile('${file.name}')">
+                    <div class="flex items-center">
+                        ${fileIcon}
+                        <div>
+                            <h4 class="font-medium terminal-text">${file.name}</h4>
+                            <p class="text-sm text-gray-400">${file.size || 'Unknown size'} 
+                                <span class="file-type-badge">${fileType}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button onclick="event.stopPropagation(); downloadFile('${file.name}')" 
+                                class="text-blue-400 file-action-btn p-2">
+                            <i class="fas fa-download text-lg"></i>
+                        </button>
+                        <button onclick="event.stopPropagation(); previewFile('${file.name}')" 
+                                class="text-green-400 file-action-btn p-2">
+                            <i class="fas fa-eye text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+        
+        filesHTML += '</div>';
+        filesContainer.innerHTML = filesHTML;
+    } else {
+        filesContainer.innerHTML = `
+            <div class="text-center py-10 text-gray-400">
+                <i class="fas fa-file-alt text-5xl mb-4 text-gray-500"></i>
+                <p class="text-lg">No files in this folder</p>
+                <p class="text-sm mt-2">Upload or create files to get started</p>
+            </div>
+        `;
+    }
+}
+
+// Refresh content
+function refreshContent() {
+    loadFolderContent(currentFolder);
+    showStatus('Content refreshed', 'success');
+}
+
+// Create folder
+function createFolder() {
+    const folderName = document.getElementById('folderName').value.trim();
+    
+    if (!folderName) {
+        showStatus('Please enter a folder name', 'error');
+        return;
+    }
+    
+    fetch('/class-notes/create-folder/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+            folder_name: folderName,
+            parent_folder: currentFolder
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showStatus(data.message, 'success');
+            document.getElementById('folderName').value = '';
+            // Refresh the content
+            loadFolderContent(currentFolder);
+        } else {
+            showStatus(data.error, 'error');
+        }
+    })
+    .catch(error => {
+        showStatus('Error creating folder: ' + error, 'error');
+    });
+}
+
+// Upload file
+function uploadFile() {
+    const folder = document.getElementById('uploadFolder').value;
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+    
+    if (!file) {
+        showStatus('Please select a file to upload', 'error');
+        return;
+    }
+    
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('folder', folder);
+    
+    fetch('/class-notes/upload-file/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showStatus(data.message, 'success');
+            fileInput.value = '';
+            // Refresh the content
+            loadFolderContent(currentFolder);
+        } else {
+            showStatus(data.error, 'error');
+        }
+    })
+    .catch(error => {
+        showStatus('Error uploading file: ' + error, 'error');
+    });
+}
+
+// Launch VS Code
+function launchVSCode() {
+    fetch('/class-notes/launch-vscode/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showStatus(data.message, 'success');
+        } else {
+            showStatus(data.error, 'error');
+        }
+    })
+    .catch(error => {
+        showStatus('Error launching VS Code: ' + error, 'error');
+    });
+}
+
+// Create file
+function createFile() {
+    const folder = document.getElementById('createFileFolder').value;
+    const filename = document.getElementById('fileName').value.trim();
+    const content = document.getElementById('fileContent').value;
+    
+    if (!filename) {
+        showStatus('Please enter a filename', 'error');
+        return;
+    }
+    
+    fetch('/class-notes/create-file/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+            folder: folder,
+            filename: filename,
+            content: content
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showStatus(data.message, 'success');
+            document.getElementById('fileName').value = '';
+            document.getElementById('fileContent').value = '';
+            // Refresh the content
+            loadFolderContent(currentFolder);
+        } else {
+            showStatus(data.error, 'error');
+        }
+    })
+    .catch(error => {
+        showStatus('Error creating file: ' + error, 'error');
+    });
+}
+
+// Download file
+function downloadFile(fileName) {
+    showStatus(`Downloading: ${fileName}`, 'success');
+    // Implement download functionality
+    const fileUrl = `/media/class_notes/${currentFolder ? currentFolder + '/' : ''}${fileName}`;
+    window.open(fileUrl, '_blank');
+}
+
+// Preview file
+function previewFile(fileName) {
+    currentPreviewFile = fileName;
+    document.getElementById('previewFileName').textContent = `Preview: ${fileName}`;
+    document.getElementById('previewFileTitle').textContent = fileName;
+    document.getElementById('previewFileInfo').textContent = `Location: ${currentFolder || 'Root'}`;
+    document.getElementById('fileContentDisplay').textContent = 'Loading file content...';
+    document.getElementById('summaryDisplay').innerHTML = '<p class="text-gray-400">No summary generated yet. Click "Generate Summary" to create one.</p>';
+    document.getElementById('keyPointsDisplay').innerHTML = '<p class="text-gray-400">Key points will appear here after generating a summary.</p>';
+    
+    // Update file icon in preview
+    updatePreviewFileIcon(fileName);
+    
+    // Reset tabs
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    document.querySelector('.tab-button[data-tab="content"]').classList.add('active');
+    document.getElementById('content-tab').classList.add('active');
+    
+    // Show modal
+    document.getElementById('filePreviewModal').classList.remove('hidden');
+    
+    // Load file content
+    fetch(`/class-notes/get-file-content/?filename=${encodeURIComponent(fileName)}&folder=${encodeURIComponent(currentFolder)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                document.getElementById('fileContentDisplay').textContent = data.content;
+            } else {
+                document.getElementById('fileContentDisplay').textContent = 'Error loading file content: ' + data.error;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('fileContentDisplay').textContent = 'Error loading file content. Please try again.';
+        });
+}
+
+// Update file icon in preview modal
+function updatePreviewFileIcon(fileName) {
+    const iconElement = document.getElementById('previewFileIcon');
+    const fileNameLower = fileName.toLowerCase();
+    
+    // Clear existing classes
+    iconElement.className = 'file-icon mr-3';
+    
+    if (fileNameLower.endsWith('.txt')) {
+        iconElement.classList.add('txt-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-text text-xl"></i>';
+    } else if (fileNameLower.endsWith('.pdf')) {
+        iconElement.classList.add('pdf-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-pdf text-xl"></i>';
+    } else if (fileNameLower.endsWith('.doc') || fileNameLower.endsWith('.docx')) {
+        iconElement.classList.add('doc-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-word text-xl"></i>';
+    } else if (fileNameLower.endsWith('.html') || fileNameLower.endsWith('.htm')) {
+        iconElement.classList.add('html-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-code text-xl"></i>';
+    } else if (fileNameLower.endsWith('.xls') || fileNameLower.endsWith('.xlsx')) {
+        iconElement.classList.add('excel-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-excel text-xl"></i>';
+    } else if (fileNameLower.endsWith('.csv')) {
+        iconElement.classList.add('csv-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-csv text-xl"></i>';
+    } else if (fileNameLower.endsWith('.jpg') || fileNameLower.endsWith('.jpeg') || fileNameLower.endsWith('.png') || fileNameLower.endsWith('.gif')) {
+        iconElement.classList.add('image-icon');
+        iconElement.innerHTML = '<i class="fas fa-file-image text-xl"></i>';
+    } else {
+        iconElement.classList.add('default-icon');
+        iconElement.innerHTML = '<i class="fas fa-file text-xl"></i>';
+    }
+}
+
+// Close preview modal
+function closePreviewModal() {
+    document.getElementById('filePreviewModal').classList.add('hidden');
+    currentPreviewFile = '';
+}
+
+// Download current file in preview
+function downloadCurrentFile() {
+    if (currentPreviewFile) {
+        downloadFile(currentPreviewFile);
+    }
+}
+
+// Generate summary
+function generateSummary() {
+    if (!currentPreviewFile) return;
+    
+    const summaryDisplay = document.getElementById('summaryDisplay');
+    const keyPointsDisplay = document.getElementById('keyPointsDisplay');
+    
+    summaryDisplay.innerHTML = '<div class="flex items-center"><div class="loading-spinner"></div>Generating summary...</div>';
+    keyPointsDisplay.innerHTML = '<div class="flex items-center"><div class="loading-spinner"></div>Extracting key points...</div>';
+    
+    fetch('/class-notes/generate-summary/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+            filename: currentPreviewFile,
+            folder: currentFolder
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            summaryDisplay.innerHTML = `<p>${data.summary}</p>`;
+            keyPointsDisplay.innerHTML = '<ul class="list-disc pl-5 space-y-2">' + 
+                data.key_points.map(point => `<li>${point}</li>`).join('') + 
+                '</ul>';
+            showStatus('Summary generated successfully!', 'success');
+        } else {
+            summaryDisplay.innerHTML = `<p class="text-red-400">Error: ${data.error}</p>`;
+            keyPointsDisplay.innerHTML = `<p class="text-red-400">Error: ${data.error}</p>`;
+            showStatus('Error generating summary', 'error');
+        }
+    })
+    .catch(error => {
+        summaryDisplay.innerHTML = `<p class="text-red-400">Error: ${error}</p>`;
+        keyPointsDisplay.innerHTML = `<p class="text-red-400">Error: ${error}</p>`;
+        showStatus('Error generating summary', 'error');
+    });
+}
+
+// Tab switching
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            
+            // Update active tab button
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update active tab content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        });
+    });
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    // Set initial folder state
+    navigateToFolder('');
+});
+</script>
+{% endblock %}

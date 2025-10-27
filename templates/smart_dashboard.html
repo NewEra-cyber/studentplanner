@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+{% block title %}Smart Dashboard - Gentleman Planner{% endblock %}
+
+{% block content %}
+<!-- Full-page wallpaper background -->
+<div id="page-bg" aria-hidden="true"></div>
+
+<!-- SVG Hex overlay at the top -->
+<svg id="hex-overlay" viewBox="0 0 1600 240" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <pattern id="hex" width="80" height="69.28" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L80 20 L80 49.28 L40 69.28 L0 49.28 L0 20 Z" fill="none" stroke="rgba(34,197,94,0.08)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="hex-fade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="rgba(6,6,7,0.12)"/>
+      <stop offset="1" stop-color="rgba(6,6,7,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#hex)"/>
+  <rect width="100%" height="100%" fill="url(#hex-fade)"/>
+</svg>
+
+<div class="container mx-auto px-4 py-6 relative z-10">
+    <!-- HEADER -->
+    <div class="rounded-xl overflow-hidden relative border border-gray-800 bg-black/60 p-6 mb-6 shadow-xl backdrop-blur-sm">
+        <div class="flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-mono font-bold text-green-300">
+                    <i class="fas fa-brain mr-3 text-green-400"></i>
+                    Smart Gentleman Planner
+                </h1>
+                <p class="text-gray-400 mt-2">Self-adjusting routine that adapts to your timetable</p>
+            </div>
+            <div class="flex gap-3">
+                <div class="bg-purple-900/30 border border-purple-700 px-4 py-2 rounded-md">
+                    <div class="text-lg font-mono text-purple-300">{{ consistency_score }}%</div>
+                    <div class="text-xs text-purple-400">Consistency</div>
+                </div>
+                <a href="{% url 'dashboard' %}" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md border border-gray-700 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Classic View
+                </a>
+            </div>
+        </div>
+
+        <!-- DAILY FOCUS -->
+        {% if daily_focus %}
+        <div class="mt-4 p-4 bg-blue-900/20 border border-blue-700 rounded-lg">
+            <div class="flex items-start">
+                <i class="fas fa-quote-left text-blue-400 mt-1 mr-3"></i>
+                <div>
+                    <p class="text-blue-200 italic">"{{ daily_focus.quote }}"</p>
+                    {% if daily_focus.author %}
+                    <p class="text-blue-400 text-sm mt-2">— {{ daily_focus.author }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- QUICK STATS -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-mono text-green-300">{{ smart_activities.count }}</div>
+            <div class="text-xs text-gray-400 mt-1">Smart Activities</div>
+        </div>
+        <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-mono text-blue-300">{{ timetable_entries.count }}</div>
+            <div class="text-xs text-gray-400 mt-1">Timetable Entries</div>
+        </div>
+        <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-mono text-purple-300">{{ jkuat_schedule.count }}</div>
+            <div class="text-xs text-gray-400 mt-1">JKUAT Classes</div>
+        </div>
+        <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-mono text-orange-300">{{ all_activities|length }}</div>
+            <div class="text-xs text-gray-400 mt-1">Total Today</div>
+        </div>
+    </div>
+
+    <!-- SCHEDULE DISPLAY -->
+    <div class="bg-black/60 border border-gray-800 rounded-lg shadow-lg mb-8">
+        <div class="p-6 border-b border-gray-800">
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-bold text-green-300 flex items-center">
+                    <i class="fas fa-calendar-day mr-3 text-green-400"></i>
+                    {{ current_day }}'s Optimized Schedule
+                </h2>
+                <button onclick="adjustSchedule()" class="bg-green-600 hover:bg-green-700 text-black font-semibold px-4 py-2 rounded-md text-sm transition-colors">
+                    <i class="fas fa-sync-alt mr-2"></i> Re-adjust
+                </button>
+            </div>
+            <p class="text-xs text-gray-400 mt-1">
+                <span class="inline-flex items-center mr-4"><span class="w-3 h-3 bg-green-400 rounded-full mr-1"></span> Fixed Activities</span>
+                <span class="inline-flex items-center mr-4"><span class="w-3 h-3 bg-blue-400 rounded-full mr-1"></span> Flexible Activities</span>
+                <span class="inline-flex items-center mr-4"><span class="w-3 h-3 bg-purple-500 rounded-full mr-1"></span> Academic</span>
+                <span class="inline-flex items-center"><span class="w-3 h-3 bg-yellow-500 rounded-full mr-1"></span> Adjusted</span>
+            </p>
+        </div>
+
+        <div class="divide-y divide-gray-800">
+            {% for activity in all_activities %}
+            <div class="p-4 hover:bg-gray-900/50 transition-colors flex justify-between items-center
+                        {% if activity.adjustment_count > 0 %}border-l-4 border-yellow-500 bg-yellow-900/10{% endif %}
+                        {% if activity.priority_level == 1 %}border-l-4 border-green-500 bg-green-900/10{% endif %}
+                        {% if activity.is_flexible and activity.priority_level != 1 %}border-l-4 border-blue-500 bg-blue-900/10{% endif %}">
+                <div class="flex items-center space-x-4">
+                    <div class="w-28 text-left">
+                        <span class="font-mono text-sm text-gray-300">{{ activity.start_time|time:"H:i" }}</span>
+                        <span class="block text-xs text-gray-500">{{ activity.end_time|time:"H:i" }}</span>
+                    </div>
+                    <div>
+                        {% if activity.unit_code %}
+                        <p class="font-semibold text-gray-100">{{ activity.unit_code }} - {{ activity.unit_name }}</p>
+                        <p class="text-xs text-gray-400 mt-1">{{ activity.venue }}</p>
+                        {% elif activity.course_code %}
+                        <p class="font-semibold text-gray-100">{{ activity.course_code }} - {{ activity.course_name }}</p>
+                        <p class="text-xs text-gray-400 mt-1">{{ activity.venue }}</p>
+                        {% else %}
+                        <p class="font-semibold text-gray-100">{{ activity.title }}</p>
+                        <p class="text-xs text-gray-400 mt-1">{{ activity.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-medium 
+                                {% if activity.category == 'morning_routine' %}bg-orange-900/30 text-orange-300 border border-orange-700
+                                {% elif activity.category == 'fitness' %}bg-red-900/30 text-red-300 border border-red-700
+                                {% elif activity.category == 'meal' %}bg-yellow-900/30 text-yellow-300 border border-yellow-700
+                                {% elif activity.category == 'academic' %}bg-blue-900/30 text-blue-300 border border-blue-700
+                                {% elif activity.category == 'personal' %}bg-purple-900/30 text-purple-300 border border-purple-700
+                                {% elif activity.category == 'social' %}bg-pink-900/30 text-pink-300 border border-pink-700
+                                {% elif activity.category == 'reflection' %}bg-indigo-900/30 text-indigo-300 border border-indigo-700
+                                {% else %}bg-gray-900/30 text-gray-300 border border-gray-700{% endif %}">
+                        {% if activity.unit_code or activity.course_code %}
+                            📚 Academic
+                        {% else %}
+                            {{ activity.get_category_display }}
+                        {% endif %}
+                    </span>
+                    
+                    {% if activity.adjustment_count > 0 %}
+                    <span class="inline-block px-2 py-1 rounded-full text-xs bg-yellow-900/30 text-yellow-300 border border-yellow-700">
+                        🔄 {{ activity.adjustment_count }}
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div class="p-8 text-center text-gray-400">
+                <i class="fas fa-robot text-4xl mb-4 text-green-400"></i>
+                <p class="text-lg font-semibold">No optimized schedule yet</p>
+                <p class="text-sm mt-2 text-gray-500">
+                    <a href="{% url 'timetable_input' %}" class="text-green-400 hover:text-green-300">Add your timetable</a> 
+                    or 
+                    <a href="{% url 'initialize_gentleman_routine' %}" class="text-green-400 hover:text-green-300">initialize the routine</a>
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- SYSTEM INFO -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-800 rounded-lg p-6">
+            <h3 class="text-lg font-mono text-green-300 mb-4">
+                <i class="fas fa-cog mr-2 text-green-400"></i> System Status
+            </h3>
+            <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Auto-adjustment</span>
+                    <span class="px-2 py-1 bg-green-900/30 text-green-300 rounded text-xs">ACTIVE</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Smart Activities</span>
+                    <span class="text-gray-300">{{ smart_activities.count }} active</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Last Adjustment</span>
+                    <span class="text-gray-300">
+                        {% if last_adjusted_activity and last_adjusted_activity.last_adjusted %}
+                            {{ last_adjusted_activity.last_adjusted|timesince }} ago
+                        {% else %}
+                            Never
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-black/60 border border-gray-800 rounded-lg p-6">
+            <h3 class="text-lg font-mono text-green-300 mb-4">
+                <i class="fas fa-lightbulb mr-2 text-green-400"></i> How It Works
+            </h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                    <span>System auto-adjusts when you add/remove timetable entries</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                    <span>Fixed activities (wake up, sleep) never move</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                    <span>Flexible activities shift to available time slots</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                    <span>Academic timetable always takes priority</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+async function adjustSchedule() {
+    try {
+        const response = await fetch('{% url "adjust_schedule" %}', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `day={{ current_day }}`
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            alert('✅ ' + data.message);
+            location.reload();
+        } else {
+            alert('❌ ' + data.error);
+        }
+    } catch (error) {
+        alert('❌ Error adjusting schedule: ' + error.message);
+    }
+}
+</script>
+
+<style>
+/* -------------------------
+   Page background + hex overlay
+   ------------------------- */
+#page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('https://www.zoomgroup.com/public/storage/images/courses/Linux-Administration-slider.webp');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  filter: brightness(0.36) saturate(0.9);
+}
+
+/* hex overlay top styling (placed above bg, behind content) */
+#hex-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* responsiveness minor */
+@media (max-width: 768px) {
+  #hex-overlay { height: 160px; }
+}
+</style>
+{% endblock %}

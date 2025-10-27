@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="{% if request.session.dark_mode %}dark{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Beast Mode Planner{% endblock %}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        .theme-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Gradient backgrounds that match hacker theme */
+        nav.gradient-bar {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111827 40%, #0f172a 100%);
+        }
+        .dark nav.gradient-bar {
+            background: linear-gradient(135deg, #000000 0%, #0f172a 40%, #0a3b29 100%);
+            border-bottom: 1px solid rgba(16,185,129,0.15);
+            box-shadow: 0 4px 20px rgba(16,185,129,0.08);
+        }
+
+        footer.gradient-bar {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        }
+        .dark footer.gradient-bar {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #0f172a 100%);
+            border-top: 1px solid rgba(16,185,129,0.15);
+            box-shadow: 0 -4px 20px rgba(16,185,129,0.08);
+        }
+
+        .nav-link {
+            transition: all 0.25s ease-in-out;
+        }
+
+        .nav-link:hover {
+            text-shadow: 0 0 6px rgba(34,197,94,0.8);
+        }
+
+        .dark .nav-link.active {
+            color: #10b981;
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(16,185,129,0.8);
+        }
+
+        .footer-text {
+            font-family: "Roboto Mono", monospace;
+            letter-spacing: 0.5px;
+        }
+    </style>
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 theme-transition min-h-screen flex flex-col">
+    <!-- Debug Info -->
+    <div id="debug-info" class="fixed top-0 left-0 bg-yellow-500 text-black p-2 text-xs z-50">
+        JS Loaded: <span id="js-status">Checking...</span> |
+        Dark Mode: <span id="dark-status">{% if request.session.dark_mode %}On{% else %}Off{% endif %}</span>
+    </div>
+
+    <script>document.getElementById('js-status').textContent = 'Yes';</script>
+
+    <!-- NAVBAR -->
+    <nav class="gradient-bar text-gray-200 dark:text-gray-100 shadow-lg theme-transition">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-green-400 flex items-center">
+                        <i class="fas fa-terminal mr-2 text-green-500"></i> Beast Mode
+                    </h1>
+
+                    <!-- Nav Links -->
+                    <div class="hidden md:flex space-x-6 text-sm font-mono">
+                        <a href="{% url 'dashboard' %}" 
+                           class="nav-link {% if request.path == '/' %}active{% endif %}">
+                           <i class="fas fa-home mr-1"></i> Dashboard
+                        </a>
+                        <a href="{% url 'activities_resources' %}" 
+                           class="nav-link {% if 'resources' in request.path %}active{% endif %}">
+                           <i class="fas fa-book mr-1"></i> Resources
+                        </a>
+                        <a href="{% url 'manage_activities' %}" 
+                           class="nav-link {% if 'manage' in request.path %}active{% endif %}">
+                           <i class="fas fa-tasks mr-1"></i> Manage
+                        </a>
+                        <a href="{% url 'profile' %}" 
+                           class="nav-link {% if 'profile' in request.path %}active{% endif %}">
+                           <i class="fas fa-user mr-1"></i> Profile
+                        </a>
+                        <a href="{% url 'class_notes' %}" 
+                           class="nav-link {% if 'class-notes' in request.path %}active{% endif %}">
+                           <i class="fas fa-book mr-1"></i> Class Notes
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section: Theme Toggle + User -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 theme-transition">
+                        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
+                    </button>
+
+                    <!-- User Info -->
+                    <div class="flex items-center space-x-3">
+                        <span class="text-sm hidden sm:block">Welcome, {{ user.username }}</span>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" 
+                           class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md flex items-center text-sm font-semibold transition-all">
+                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div class="md:hidden pb-3 border-t border-gray-700 mt-2">
+                <div class="flex justify-around text-sm font-mono">
+                    <a href="{% url 'dashboard' %}" class="{% if request.path == '/' %}text-green-400{% else %}text-gray-300{% endif %}">
+                        <i class="fas fa-home mb-1"></i> Dashboard
+                    </a>
+                    <a href="{% url 'activities_resources' %}" class="{% if 'resources' in request.path %}text-green-400{% else %}text-gray-300{% endif %}">
+                        <i class="fas fa-book mb-1"></i> Resources
+                    </a>
+                    <a href="{% url 'manage_activities' %}" class="{% if 'manage' in request.path %}text-green-400{% else %}text-gray-300{% endif %}">
+                        <i class="fas fa-tasks mb-1"></i> Manage
+                    </a>
+                    <a href="{% url 'profile' %}" class="{% if 'profile' in request.path %}text-green-400{% else %}text-gray-300{% endif %}">
+                        <i class="fas fa-user mb-1"></i> Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="gradient-bar border-t dark:border-gray-700 py-6 text-center theme-transition">
+        <div class="container mx-auto">
+            <p class="footer-text text-gray-600 dark:text-gray-400">
+                © 2025 <span class="text-green-400 font-bold">Beast Mode Planner</span> — Built with 💪 & <span class="text-green-400">Python</span> for productivity.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const themeIcon = document.getElementById('theme-icon');
+        const isDark = html.classList.contains('dark');
+
+        if (isDark) {
+            html.classList.remove('dark');
+            themeIcon.className = 'fas fa-moon text-gray-700';
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.classList.add('dark');
+            themeIcon.className = 'fas fa-sun text-yellow-400';
+            localStorage.setItem('theme', 'dark');
+        }
+
+        fetch('/toggle-dark-mode/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({ dark_mode: !isDark })
+        }).catch(console.error);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const localTheme = localStorage.getItem('theme');
+        const sessionTheme = '{{ request.session.dark_mode|default:"false" }}' === 'True';
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        const theme = localTheme || (sessionTheme ? 'dark' : (systemPrefersDark ? 'dark' : 'light'));
+        const html = document.documentElement;
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (theme === 'dark') {
+            html.classList.add('dark');
+            themeIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+            html.classList.remove('dark');
+            themeIcon.className = 'fas fa-moon text-gray-700';
+        }
+    });
+    </script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

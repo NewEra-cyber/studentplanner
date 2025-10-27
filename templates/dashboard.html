@@ -1,0 +1,636 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - Beast Mode Planner{% endblock %}
+
+{% block content %}
+<!-- Full-page wallpaper background (fixed, covers) + top hex overlay -->
+<div id="page-bg" aria-hidden="true"></div>
+
+<!-- SVG Hex overlay at the top -->
+<svg id="hex-overlay" viewBox="0 0 1600 240" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <pattern id="hex" width="80" height="69.28" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L80 20 L80 49.28 L40 69.28 L0 49.28 L0 20 Z" fill="none" stroke="rgba(34,197,94,0.08)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="hex-fade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="rgba(6,6,7,0.12)"/>
+      <stop offset="1" stop-color="rgba(6,6,7,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#hex)"/>
+  <rect width="100%" height="100%" fill="url(#hex-fade)"/>
+</svg>
+
+<div class="container mx-auto px-4 py-6 relative z-10">
+    <!-- HEADER: Day nav + Live Clock -->
+    <div class="rounded-xl overflow-hidden relative border border-gray-800 bg-black/60 p-5 mb-6 shadow-xl backdrop-blur-sm">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="?day={{ prev_day|date:'Y-m-d' }}" 
+                   class="nav-btn bg-black/60 border border-gray-700 hover:border-green-400 px-3 py-2 rounded-md text-sm text-gray-300 flex items-center">
+                    <i class="fas fa-chevron-left mr-2"></i> Prev Day
+                </a>
+            </div>
+
+            <div class="text-center">
+                <h2 class="text-2xl font-mono font-semibold text-green-300">{{ current_day }}</h2>
+                <p class="text-xs text-gray-400">{{ selected_date|date:"F j, Y" }}</p>
+
+                <!-- LIVE CLOCK -->
+                <div class="mt-3 inline-block">
+                    <div id="live-clock" 
+                         class="font-mono text-3xl tracking-wider px-6 py-3 rounded-lg border border-green-600 bg-black/85 shadow-[0_0_22px_rgba(16,185,129,0.18)] text-green-300">
+                        Loading...
+                    </div>
+                    <div class="text-xs text-gray-400 mt-1" id="clock-status">🔄 Fetching real time...</div>
+                </div>
+
+                {% if is_today %}
+                <div class="mt-2 inline-block px-3 py-1 rounded-full text-xs bg-green-900/30 border border-green-700 text-green-300 font-mono">
+                    Today • Live Updates
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <a href="?day={{ next_day|date:'Y-m-d' }}" 
+                   class="nav-btn bg-black/60 border border-gray-700 hover:border-green-400 px-3 py-2 rounded-md text-sm text-gray-300 flex items-center">
+                    Next Day <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+                <a href="{% url 'manage_activities' %}" 
+                   class="bg-green-700 text-black font-semibold px-3 py-2 rounded-md shadow hover:shadow-lg text-sm">
+                    Manage Activities
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Day Selector -->
+        <div class="flex justify-center gap-2 mt-4 flex-wrap">
+            {% for day in next_7_days %}
+            <a href="?day={{ day.date|date:'Y-m-d' }}" 
+               class="px-3 py-1 rounded-md text-xs font-mono transition-colors {% if day.is_selected %}bg-green-700 text-black{% else %}bg-black/50 text-gray-300 border border-gray-800 hover:bg-black/60{% endif %}">
+                {{ day.day_name }} <div class="text-[10px] text-gray-400">{{ day.date|date:'m/d' }}</div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- ACTIVITY MANAGEMENT CARD -->
+    <div class="bg-black/60 border border-gray-800 rounded-lg p-4 mb-6 shadow-md backdrop-blur-sm">
+        <div class="flex justify-between items-center">
+            <div>
+                <h3 class="text-lg font-mono text-green-300"><i class="fas fa-tasks mr-2 text-green-400"></i> Activity Management</h3>
+                <p class="text-xs text-gray-400 mt-1">View, edit, or delete scheduled activities across all days.</p>
+            </div>
+            <a href="{% url 'manage_activities' %}" class="bg-gray-800/60 border border-green-600 px-4 py-2 rounded-md text-sm text-green-200 hover:bg-green-800/10">
+                <i class="fas fa-terminal mr-2"></i> Console
+            </a>
+        </div>
+    </div>
+    <!-- TIMETABLE MANAGEMENT CARD - ADD THIS -->
+    <div class="bg-black/60 border border-gray-800 rounded-lg p-4 mb-6 shadow-md backdrop-blur-sm">
+        <div class="flex justify-between items-center">
+            <div>
+                <h3 class="text-lg font-mono text-green-300"><i class="fas fa-calendar-alt mr-2 text-green-400"></i> Timetable Management</h3>
+                <p class="text-xs text-gray-400 mt-1">Input your school timetable and generate optimized study schedule.</p>
+            </div>
+            <a href="{% url 'timetable_input' %}" class="bg-green-600 hover:bg-green-700 text-black font-semibold px-4 py-2 rounded-md text-sm transition-colors">
+                <i class="fas fa-clock mr-2"></i> Manage Timetable
+            </a>
+        </div>
+    </div>
+    <!-- WEATHER & STATS ROW -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <!-- WEATHER WIDGET (DYNAMIC BACKGROUNDS) -->
+        <div class="rounded-lg p-4 shadow-lg border border-gray-800 overflow-hidden relative">
+            <div class="weather-widget rounded-lg p-4 text-white relative overflow-hidden {% if weather and weather.background_class %}{{ weather.background_class }}{% else %}weather-default{% endif %}">
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-mono font-bold drop-shadow-md">{{ weather.location_name|default:"Juja Weather" }}</h3>
+                            <span class="text-3xl drop-shadow-xl">{{ weather.icon|default:"🌤️" }}</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-4xl font-extrabold">{{ weather.temperature|default:"--" }}°C</p>
+                                <p class="text-sm opacity-90">{{ weather.description|default:"Unknown" }}</p>
+                            </div>
+                            <div class="text-right text-sm opacity-90">
+                                <p>Feels like {{ weather.feels_like|default:"--" }}°C</p>
+                                <p>Humidity: {{ weather.humidity|default:"--" }}%</p>
+                                <p>Wind: {{ weather.wind_speed|default:"--" }} km/h</p>
+                                {% if weather.pressure %}
+                                <p>Pressure: {{ weather.pressure }} hPa</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <p class="text-xs mt-3 opacity-80">
+                            {% if weather.source == 'fallback' %}📍 Sample data{% else %}📍 Live data from OpenWeatherMap{% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- animated radial glow -->
+                <div class="absolute -right-24 -top-24 w-72 h-72 opacity-20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="grid grid-cols-2 gap-4 lg:col-span-2">
+            <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+                <div id="live-activities-count" class="text-2xl font-mono text-green-300">{{ today_schedule|length }}</div>
+                <div class="text-xs text-gray-400 mt-1">Today's Activities</div>
+            </div>
+            <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+                <div class="text-2xl font-mono text-blue-300">{{ profile.streak_count }}</div>
+                <div class="text-xs text-gray-400 mt-1">Day Streak</div>
+            </div>
+            <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+                <div class="text-2xl font-mono text-purple-300">{{ profile.total_points }}</div>
+                <div class="text-xs text-gray-400 mt-1">Total Points</div>
+            </div>
+            <div class="bg-black/60 border border-gray-800 rounded-lg p-4 text-center">
+                <div class="text-2xl font-mono text-orange-300">Week {{ profile.current_phase }}</div>
+                <div class="text-xs text-gray-400 mt-1">Beast Phase</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURRENT & NEXT ACTIVITY -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" id="live-activities-container">
+        <div class="bg-gradient-to-br from-black/60 to-gray-900/60 border border-gray-800 p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-green-300 mb-4 flex items-center">
+                <i class="fas fa-play-circle mr-2 text-green-400"></i>
+                <span id="current-activity-title">
+                    {% if is_today %}
+                        {% if current_activity %}NOW IN PROGRESS{% else %}REST TIME{% endif %}
+                    {% else %}
+                        SCHEDULED ACTIVITIES
+                    {% endif %}
+                </span>
+            </h3>
+
+            <div id="current-activity-content">
+                {% if is_today and current_activity %}
+                <div class="activity-card bg-black/75 border-l-4 rounded-lg p-4 shadow-md" style="border-left-color: {{ current_activity.color|default:'#10B981' }};">
+                    <p id="current-activity-name" class="text-xl font-mono font-bold text-green-200">
+                        {% if current_activity.display_title %}
+                            {{ current_activity.display_title }}
+                        {% else %}
+                            {{ current_activity.title }}
+                        {% endif %}
+                    </p>
+                    <div class="mt-3 space-y-2 text-gray-300 text-sm">
+                        <p class="flex items-center"><i class="fas fa-clock mr-2 text-gray-400"></i><span id="current-activity-time">{{ current_activity.start_time|time:"H:i" }} - {{ current_activity.end_time|time:"H:i" }}</span></p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-gray-400"></i><span id="current-activity-location">{{ current_activity.description|default:"No location specified" }}</span></p>
+                    </div>
+
+                    <!-- Dynamic progress -->
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs text-gray-400 mb-1">
+                            <span>Time Progress</span>
+                            <span id="time-remaining">Calculating...</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                            <div id="live-progress" class="h-2 rounded-full" style="width:0%; background: linear-gradient(90deg,#10b981,#60a5fa); transition: width 0.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="/activities/resources/?type={{ current_activity.activity_type }}" class="w-full inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-4 rounded-md">
+                            <i class="fas fa-rocket mr-2"></i> Start Activity
+                        </a>
+                    </div>
+
+                    <span class="inline-block mt-3 px-3 py-1 bg-black/60 border border-gray-700 text-xs text-gray-300 rounded-full">
+                        {% if current_activity.get_activity_type_display %}
+                            {{ current_activity.get_activity_type_display }}
+                        {% elif current_activity.course_code %}
+                            Class
+                        {% else %}
+                            Activity
+                        {% endif %}
+                    </span>
+                </div>
+
+                {% elif is_today and not current_activity %}
+                <div class="text-center py-6 text-gray-300">
+                    <i class="fas fa-coffee text-4xl text-green-400 mb-3"></i>
+                    <p class="text-lg font-semibold">Rest Time</p>
+                    <p class="text-sm text-gray-400">No current activity. Enjoy your break!</p>
+                </div>
+
+                {% elif today_schedule %}
+                <div class="bg-black/75 rounded-lg p-4 border border-gray-800 shadow-sm">
+                    <p class="text-xl font-bold text-green-200">
+                        {% if today_schedule.0.display_title %}
+                            {{ today_schedule.0.display_title }}
+                        {% else %}
+                            {{ today_schedule.0.title }}
+                        {% endif %}
+                    </p>
+                    <div class="mt-3 text-gray-300 text-sm">
+                        <p><i class="fas fa-clock mr-2 text-gray-400"></i>{{ today_schedule.0.start_time|time:"H:i" }} - {{ today_schedule.0.end_time|time:"H:i" }}</p>
+                        <p class="mt-1"><i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>{{ today_schedule.0.description|default:"No location specified" }}</p>
+                    </div>
+                    <span class="inline-block mt-3 px-3 py-1 bg-black/60 border border-gray-700 text-xs text-gray-300 rounded-full">
+                        {% if today_schedule.0.get_activity_type_display %}
+                            {{ today_schedule.0.get_activity_type_display }}
+                        {% elif today_schedule.0.course_code %}
+                            Class
+                        {% else %}
+                            Activity
+                        {% endif %}
+                    </span>
+                </div>
+
+                {% else %}
+                <div class="text-center py-6 text-gray-300">
+                    <i class="fas fa-calendar-plus text-4xl text-green-400 mb-3"></i>
+                    <p class="text-lg font-semibold">No Activities</p>
+                    <p class="text-sm text-gray-400">No activities scheduled for today</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- NEXT ACTIVITY -->
+        <div class="bg-gradient-to-br from-black/60 to-gray-900/60 border border-gray-800 p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-green-300 mb-4 flex items-center">
+                <i class="fas fa-arrow-right mr-2 text-green-400"></i>
+                <span id="next-activity-title">{% if next_activity %}COMING UP NEXT{% else %}UPCOMING{% endif %}</span>
+            </h3>
+            <div id="next-activity-content">
+                {% if next_activity %}
+                <div class="bg-black/75 rounded-lg p-4 border border-gray-800 shadow-sm">
+                    <p id="next-activity-name" class="text-xl font-bold text-green-200">
+                        {% if next_activity.display_title %}
+                            {{ next_activity.display_title }}
+                        {% else %}
+                            {{ next_activity.title }}
+                        {% endif %}
+                    </p>
+                    <div class="mt-3 text-gray-300 text-sm">
+                        <p class="flex items-center"><i class="fas fa-clock mr-2 text-gray-400"></i><span id="next-activity-time">{{ next_activity.start_time|time:"H:i" }} - {{ next_activity.end_time|time:"H:i" }}</span></p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-gray-400"></i><span id="next-activity-location">{{ next_activity.description|default:"No location specified" }}</span></p>
+                    </div>
+                    <span class="inline-block mt-3 px-3 py-1 bg-black/60 border border-gray-700 text-xs text-gray-300 rounded-full">
+                        {% if next_activity.get_activity_type_display %}
+                            {{ next_activity.get_activity_type_display }}
+                        {% elif next_activity.course_code %}
+                            Class
+                        {% else %}
+                            Activity
+                        {% endif %}
+                    </span>
+                </div>
+                {% else %}
+                <div class="text-center py-6 text-gray-300">
+                    <i class="fas fa-moon text-4xl text-green-400 mb-3"></i>
+                    <p class="text-lg font-semibold">{% if no_classes_today %}No classes today! 🎉{% else %}Day complete! 🎊{% endif %}</p>
+                    <p class="text-sm text-gray-400">{% if no_classes_today %}Perfect day for self-study{% else %}No more activities scheduled{% endif %}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- TODAY'S SCHEDULE LIST -->
+    <div class="bg-gradient-to-br from-black/60 to-gray-900/60 border border-gray-800 rounded-lg shadow-lg mb-8">
+        <div class="p-6 border-b border-gray-800">
+            <h2 class="text-xl font-bold text-green-300 flex items-center"><i class="fas fa-calendar-day mr-3 text-green-400"></i>{{ current_day }}'s Schedule</h2>
+            <p class="text-xs text-gray-400 mt-1">
+                <span class="inline-flex items-center mr-4"><span class="w-3 h-3 bg-green-400 rounded-full mr-1"></span> Fixed Times</span>
+                <span class="inline-flex items-center mr-4"><span class="w-3 h-3 bg-blue-400 rounded-full mr-1"></span> Flexible Activities</span>
+                <span class="inline-flex items-center"><span class="w-3 h-3 bg-purple-500 rounded-full mr-1"></span> JKUAT Classes</span>
+            </p>
+        </div>
+
+        <div class="divide-y divide-gray-800" id="schedule-list">
+            {% for activity in today_schedule %}
+            <div class="p-4 hover:bg-black/60 transition-colors flex justify-between items-center
+                        {% if activity.course_code %}border-l-4 border-purple-500 bg-purple-900/10
+                        {% elif activity.unit_code %}border-l-4 border-purple-500 bg-purple-900/10
+                        {% elif not activity.is_flexible %}border-l-4 border-green-500 bg-black/60 fixed-activity
+                        {% else %}border-l-4 border-blue-600 bg-black/60 flexible-activity{% endif %} rounded-md">
+                <div class="flex items-center space-x-4">
+                    <div class="w-28 text-left">
+                        <span class="font-mono text-sm text-gray-300">{{ activity.start_time|time:"H:i" }}</span>
+                        <span class="block text-xs text-gray-500">{{ activity.end_time|time:"H:i" }}</span>
+                    </div>
+                    <div>
+                        <!-- Display proper title based on activity type -->
+                        {% if activity.course_code %}
+                        <p class="font-semibold text-gray-100">📚 {{ activity.course_code }} - {{ activity.course_name }}</p>
+                        <p class="text-xs text-gray-400 mt-1">{{ activity.venue }}</p>
+                        {% elif activity.unit_code %}
+                        <p class="font-semibold text-gray-100">📚 {{ activity.unit_code }} - {{ activity.unit_name }}</p>
+                        <p class="text-xs text-gray-400 mt-1">{{ activity.venue|default:"Class" }}</p>
+                        {% else %}
+                        <p class="font-semibold text-gray-100">
+                            {% if activity.display_title %}
+                                {{ activity.display_title }}
+                            {% else %}
+                                {{ activity.title }}
+                            {% endif %}
+                        </p>
+                        <p class="text-xs text-gray-400 mt-1">{{ activity.description|default:"Activity" }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-black" 
+                          style="background-color: {% if activity.course_code or activity.unit_code %}#8B5CF6{% elif not activity.is_flexible %}#10B981{% else %}#3B82F6{% endif %}">
+                        {% if activity.course_code or activity.unit_code %}
+                            {% if 'lab' in activity.venue.lower %}💻 Lab{% else %}📚 Lecture{% endif %}
+                        {% else %}
+                            {% if activity.get_activity_type_display %}
+                                {{ activity.get_activity_type_display }}
+                            {% else %}
+                                Activity
+                            {% endif %}
+                        {% endif %}
+                    </span>
+                    <a href="/activities/resources/?type={% if activity.course_code or activity.unit_code %}lecture{% else %}{{ activity.activity_type }}{% endif %}" 
+                       class="bg-gray-800/60 border border-gray-700 px-3 py-2 rounded-md text-xs text-gray-200 hover:bg-gray-700/60">
+                        <i class="fas fa-external-link-alt mr-1"></i> Resources
+                    </a>
+                </div>
+            </div>
+            {% empty %}
+            <div class="p-8 text-center text-gray-400">
+                <i class="fas fa-calendar-plus text-4xl mb-4 text-green-400"></i>
+                <p class="text-lg font-semibold">No classes or activities scheduled for {{ current_day }}</p>
+                <p class="text-sm mt-2 text-gray-500">Enjoy your free day! 🎉</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<style>
+/* -------------------------
+   Page background + hex overlay
+   ------------------------- */
+#page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('https://www.zoomgroup.com/public/storage/images/courses/Linux-Administration-slider.webp');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  filter: brightness(0.36) saturate(0.9);
+}
+
+/* hex overlay top styling (placed above bg, behind content) */
+#hex-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* main theme accents */
+:root{
+  --neon-green: #10b981;
+  --neon-blue: #60a5fa;
+  --panel-bg: rgba(6,6,7,0.6);
+}
+
+/* weather dynamic backgrounds (choose mapping in view) */
+.weather-widget { position: relative; border-radius: 12px; overflow: hidden; }
+.weather-sunny { background: linear-gradient(135deg,#FFD86B 0%, #FFB86B 40%, #FF7A18 100%); color: #0b1220; }
+.weather-rain  { background: linear-gradient(135deg,#4b6cb7 0%, #182848 100%); color: #f0f9ff; }
+.weather-cloudy{ background: linear-gradient(135deg,#757F9A 0%, #D7DDE8 100%); color: #0b1220; }
+.weather-storm { background: linear-gradient(135deg,#252525 0%, #373B44 100%); color: #f8fafc; }
+.weather-snow  { background: linear-gradient(135deg,#E6F0FF 0%, #BEE7FF 100%); color: #0f172a; }
+.weather-fog   { background: linear-gradient(135deg,#BDC3C7 0%, #2C3E50 100%); color: #0f172a; }
+.weather-default { background: linear-gradient(135deg,#0f172a 0%, #0f172a 100%); color: #c7f9d6; }
+
+/* terminal look tweaks */
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; }
+.nav-btn { transition: all .18s ease; }
+.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(16,185,129,0.06); }
+
+/* fixed vs flexible activity visual distinction */
+.fixed-activity { box-shadow: 0 6px 22px rgba(16,185,129,0.06); }
+.flexible-activity { box-shadow: 0 6px 16px rgba(96,165,250,0.03); }
+
+/* responsiveness minor */
+@media (max-width: 768px) {
+  #live-clock { font-size: 1.4rem !important; padding: 0.6rem 1rem; }
+  #hex-overlay { height: 160px; }
+}
+</style>
+
+<script>
+// -------------------------
+// Live clock (Nairobi) + Main update loop
+// -------------------------
+function updateLiveClock() {
+    const now = new Date();
+    const options = { timeZone: 'Africa/Nairobi', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const timeString = now.toLocaleTimeString('en-GB', options);
+    const clockEl = document.getElementById('live-clock');
+    const statusEl = document.getElementById('clock-status');
+
+    if (clockEl) {
+        clockEl.textContent = timeString;
+        clockEl.style.boxShadow = `0 0 18px rgba(16,185,129,0.14)`;
+    }
+    if (statusEl) {
+        statusEl.textContent = '✅ Live Time (Nairobi)';
+        statusEl.style.color = '#86efac';
+    }
+    return new Date();
+}
+
+// -------------------------
+// Load schedule data from template context
+// -------------------------
+const scheduleData = [
+    {% for activity in today_schedule %}
+    {
+        id: "{{ activity.id }}",
+        title: "{{ activity.display_title|default:activity.title|escapejs }}",
+        start_time: "{{ activity.start_time|time:'H:i:s' }}",
+        end_time: "{{ activity.end_time|time:'H:i:s' }}",
+        location: "{{ activity.description|default:'No location specified'|escapejs }}",
+        activity_type: "{% if activity.get_activity_type_display %}{{ activity.get_activity_type_display|escapejs }}{% else %}Activity{% endif %}",
+        is_flexible: {% if activity.is_flexible %}true{% else %}false{% endif %},
+        course_code: "{{ activity.course_code|default:''|escapejs }}",
+        unit_code: "{{ activity.unit_code|default:''|escapejs }}",
+        color: "{% if activity.course_code or activity.unit_code %}#8B5CF6{% elif not activity.is_flexible %}#10B981{% else %}#3B82F6{% endif %}"
+    },
+    {% endfor %}
+];
+
+function timeToSeconds(timeStr) {
+    const parts = timeStr.split(':').map(x => parseInt(x, 10) || 0);
+    return parts[0]*3600 + parts[1]*60 + parts[2];
+}
+
+function findCurrentActivities() {
+    const now = new Date();
+    const parts = now.toLocaleTimeString('en-GB', { timeZone: 'Africa/Nairobi' }).split(':').map(Number);
+    const currentSeconds = (parts[0]||0)*3600 + (parts[1]||0)*60 + (parts[2]||0);
+
+    let currentActivity = null;
+    let nextActivity = null;
+
+    const sorted = scheduleData.slice().sort((a,b) => timeToSeconds(a.start_time) - timeToSeconds(b.start_time));
+
+    for (const act of sorted) {
+        const start = timeToSeconds(act.start_time);
+        const end = timeToSeconds(act.end_time);
+        if (currentSeconds >= start && currentSeconds <= end) {
+            currentActivity = act;
+        } else if (currentSeconds < start && !nextActivity) {
+            nextActivity = act;
+        }
+    }
+    return { currentActivity, nextActivity, nowParts: parts };
+}
+
+function updateProgressBar(startTimeStr, endTimeStr, nTimeParts) {
+    const progressEl = document.getElementById('live-progress');
+    const timeRemainingEl = document.getElementById('time-remaining');
+    if (!progressEl || !timeRemainingEl) return;
+
+    const start = timeToSeconds(startTimeStr);
+    const end = timeToSeconds(endTimeStr);
+    const current = (nTimeParts[0]||0) * 3600 + (nTimeParts[1]||0)*60 + (nTimeParts[2]||0);
+
+    const total = Math.max(1, end - start);
+    const elapsed = current - start;
+
+    if (elapsed < 0) {
+        progressEl.style.width = '0%';
+        progressEl.style.background = 'linear-gradient(90deg,#60a5fa,#2563eb)';
+        const until = -elapsed;
+        const mins = Math.floor(until / 60);
+        const hours = Math.floor(mins / 60);
+        const remM = mins % 60;
+        timeRemainingEl.textContent = `Starts in ${hours>0?hours+'h ':''}${remM}m`;
+    } else if (elapsed >= total) {
+        progressEl.style.width = '100%';
+        progressEl.style.background = 'linear-gradient(90deg,#ef4444,#f97316)';
+        timeRemainingEl.textContent = 'Completed';
+    } else {
+        const pct = (elapsed / total) * 100;
+        progressEl.style.width = pct + '%';
+        const green = Math.floor(150 + (105 * (1 - (pct/100))));
+        const blue = Math.floor(150 + (105 * (pct/100)));
+        progressEl.style.background = `linear-gradient(90deg, rgb(16,185,129), rgb(${blue},${green},250))`;
+        const remaining = total - elapsed;
+        const mins = Math.floor(remaining / 60);
+        const hours = Math.floor(mins / 60);
+        const remM = mins % 60;
+        timeRemainingEl.textContent = hours > 0 ? `${hours}h ${remM}m remaining` : `${remM}m remaining`;
+    }
+}
+
+function renderCurrentActivity(act, nowParts) {
+    const container = document.getElementById('current-activity-content');
+    const title = document.getElementById('current-activity-title');
+    if (!container || !title) return;
+
+    if (act) {
+        title.textContent = 'NOW IN PROGRESS';
+        container.innerHTML = `
+            <div class="activity-card bg-black/75 rounded-md p-4 border border-gray-800" style="box-shadow: 0 8px 30px ${act.color}20;">
+                <p class="text-xl font-mono font-bold text-green-200">${act.title}</p>
+                <div class="mt-3 text-sm text-gray-300">
+                    <p><i class="fas fa-clock mr-2 text-gray-500"></i> ${act.start_time.slice(0,5)} - ${act.end_time.slice(0,5)}</p>
+                    <p class="mt-1"><i class="fas fa-map-marker-alt mr-2 text-gray-500"></i> ${act.location}</p>
+                </div>
+
+                <div class="mt-4">
+                    <div class="flex justify-between text-xs text-gray-400 mb-1">
+                        <span>Time Progress</span>
+                        <span id="time-remaining">Calculating...</span>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div id="live-progress" class="h-2 rounded-full" style="width:0%"></div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <a href="/activities/resources/?type=${act.course_code || act.unit_code ? 'lecture' : 'study'}" class="w-full inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-4 rounded-md">
+                        <i class="fas fa-rocket mr-2"></i> Start ${act.activity_type}
+                    </a>
+                </div>
+
+                <span class="inline-block mt-3 px-3 py-1 bg-black/60 border border-gray-700 text-xs text-gray-300 rounded-full">${act.activity_type}</span>
+            </div>
+        `;
+        updateProgressBar(act.start_time, act.end_time, nowParts);
+    } else {
+        title.textContent = 'REST TIME';
+        container.innerHTML = `
+            <div class="text-center py-6 text-gray-300">
+                <i class="fas fa-coffee text-4xl text-green-400 mb-3"></i>
+                <p class="text-lg font-semibold">Rest Time</p>
+                <p class="text-sm text-gray-400">No current activity. Enjoy your break!</p>
+            </div>
+        `;
+    }
+}
+
+function renderNextActivity(act) {
+    const container = document.getElementById('next-activity-content');
+    const title = document.getElementById('next-activity-title');
+    if (!container || !title) return;
+
+    if (act) {
+        title.textContent = 'COMING UP NEXT';
+        container.innerHTML = `
+            <div class="bg-black/75 rounded-md p-4 border border-gray-800 shadow-sm">
+                <p class="text-xl font-bold text-green-200">${act.title}</p>
+                <div class="mt-3 text-gray-300 text-sm">
+                    <p><i class="fas fa-clock mr-2 text-gray-500"></i> ${act.start_time.slice(0,5)} - ${act.end_time.slice(0,5)}</p>
+                    <p class="mt-1"><i class="fas fa-map-marker-alt mr-2 text-gray-500"></i> ${act.location}</p>
+                </div>
+                <span class="inline-block mt-3 px-3 py-1 bg-black/60 border border-gray-700 text-xs text-gray-300 rounded-full">${act.activity_type}</span>
+            </div>
+        `;
+    } else {
+        title.textContent = 'UPCOMING';
+        container.innerHTML = `
+            <div class="text-center py-6 text-gray-300">
+                <i class="fas fa-moon text-4xl text-green-400 mb-3"></i>
+                <p class="text-lg font-semibold">Day complete! 🎊</p>
+                <p class="text-sm text-gray-400">No more activities scheduled</p>
+            </div>
+        `;
+    }
+}
+
+// main update
+function mainUpdate() {
+    try {
+        updateLiveClock();
+        {% if is_today %}
+        const { currentActivity, nextActivity, nowParts } = findCurrentActivities();
+        renderCurrentActivity(currentActivity, nowParts);
+        renderNextActivity(nextActivity);
+        {% endif %}
+    } catch (err) {
+        console.error('Dashboard update error:', err);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🛠️ Dashboard live updates started');
+    mainUpdate();
+    setInterval(mainUpdate, 1000);
+});
+</script>
+{% endblock %}
