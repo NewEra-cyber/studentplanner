@@ -1235,3 +1235,139 @@ INFO 2025-10-28 01:02:39,944 basehttp 5704 34868 "GET /media/profile_photos/What
 INFO 2025-10-28 01:03:00,442 basehttp 5704 34868 "GET /class-notes/ HTTP/1.1" 200 54078
 INFO 2025-10-28 01:03:00,677 basehttp 5704 34868 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
 INFO 2025-10-28 01:03:13,361 basehttp 5704 36752 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-10-28 01:10:36,567 basehttp 5704 20528 "GET / HTTP/1.1" 200 58384
+INFO 2025-10-28 01:17:21,737 autoreload 44548 55564 Watching for file changes with StatReloader
+INFO 2025-10-28 01:17:22,574 basehttp 5704 46236 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-10-28 01:17:23,804 basehttp 5704 46236 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-10-28 01:17:28,843 basehttp 5704 29072 "GET / HTTP/1.1" 200 58384
+INFO 2025-11-03 12:09:13,534 autoreload 21224 35648 Watching for file changes with StatReloader
+INFO 2025-11-03 12:15:45,272 autoreload 7320 34092 Watching for file changes with StatReloader
+INFO 2025-11-03 12:16:22,792 autoreload 26828 23612 Watching for file changes with StatReloader
+INFO 2025-11-03 12:19:17,225 autoreload 26828 23612 C:\Users\newer\AppData\Local\Programs\Python\Python313\Lib\site-packages\setuptools\_vendor\more_itertools\__init__.py changed, reloading.
+INFO 2025-11-03 12:19:19,432 autoreload 33468 11388 Watching for file changes with StatReloader
+INFO 2025-11-03 12:19:52,038 autoreload 9400 36480 Watching for file changes with StatReloader
+INFO 2025-11-03 12:22:50,732 autoreload 27176 20436 Watching for file changes with StatReloader
+INFO 2025-11-03 12:28:26,423 autoreload 9400 36480 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\api\urls.py changed, reloading.
+INFO 2025-11-03 12:28:26,464 autoreload 27176 20436 C:\Users\newer\OneDrive\Documents\Mine\nothn\DJANGO\planner_deep\api\urls.py changed, reloading.
+INFO 2025-11-03 12:28:28,949 autoreload 21948 33480 Watching for file changes with StatReloader
+INFO 2025-11-03 12:28:41,577 basehttp 21948 22864 "GET / HTTP/1.1" 302 0
+INFO 2025-11-03 12:28:41,623 basehttp 21948 22864 "GET /accounts/login/?next=/ HTTP/1.1" 200 9323
+WARNING 2025-11-03 12:28:44,753 log 21948 22864 Not Found: /favicon.ico
+WARNING 2025-11-03 12:28:44,753 basehttp 21948 22864 "GET /favicon.ico HTTP/1.1" 404 10319
+INFO 2025-11-03 12:30:42,498 basehttp 21948 35796 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:32:30,508 basehttp 21948 35392 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:32:34,558 basehttp 21948 36608 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:34:48,705 basehttp 21948 2460 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:34:50,331 basehttp 21948 30188 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:36:29,834 basehttp 23964 33804 "GET / HTTP/1.1" 302 0
+INFO 2025-11-03 12:36:29,874 basehttp 23964 33804 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:36:33,208 basehttp 23964 33804 "GET /accounts/login/?next=/ HTTP/1.1" 200 13062
+INFO 2025-11-03 12:40:21,229 basehttp 23964 36436 "GET /accounts/login/?next=/ HTTP/1.1" 200 12385
+INFO 2025-11-03 12:40:41,257 basehttp 23964 36436 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-03 12:40:48,369 basehttp 23964 36436 "GET / HTTP/1.1" 200 58201
+INFO 2025-11-03 12:44:40,603 basehttp 23964 36436 "GET /activities/resources/?type=lecture HTTP/1.1" 200 194541
+INFO 2025-11-03 12:46:58,170 basehttp 23964 34360 "GET / HTTP/1.1" 200 58188
+INFO 2025-11-03 14:25:16,161 basehttp 23964 34540 "GET /activities/resources/?type=lecture HTTP/1.1" 200 194541
+INFO 2025-11-03 14:33:02,565 basehttp 23964 34512 "GET / HTTP/1.1" 200 58191
+INFO 2025-11-04 11:49:58,205 autoreload 10244 18304 Watching for file changes with StatReloader
+INFO 2025-11-04 11:50:09,880 basehttp 10244 5376 "GET / HTTP/1.1" 200 60150
+WARNING 2025-11-04 11:50:10,750 log 10244 5376 Not Found: /favicon.ico
+WARNING 2025-11-04 11:50:10,751 basehttp 10244 5376 "GET /favicon.ico HTTP/1.1" 404 10319
+INFO 2025-11-04 11:50:24,103 basehttp 10244 5376 "GET / HTTP/1.1" 200 60150
+INFO 2025-11-04 11:50:35,416 basehttp 10244 5376 "GET / HTTP/1.1" 200 60150
+INFO 2025-11-04 11:51:00,019 basehttp 10244 5376 "GET /activities/resources/ HTTP/1.1" 200 196097
+INFO 2025-11-04 11:51:15,996 basehttp 10244 5376 "GET /activities/ HTTP/1.1" 200 160533
+INFO 2025-11-04 11:51:20,066 basehttp 10244 5376 "GET /activities/resources/ HTTP/1.1" 200 196097
+INFO 2025-11-04 11:51:29,197 basehttp 10244 5376 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-11-04 11:51:29,374 basehttp 10244 5376 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-11-04 11:51:34,553 basehttp 10244 5376 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-11-04 11:51:38,270 basehttp 10244 5376 "GET /class-notes/get-file-content/?filename=Advantages%20and%20disadvantages%20of%20GIS.docx&folder= HTTP/1.1" 200 31041
+INFO 2025-11-04 11:51:40,413 basehttp 10244 5376 "GET /media/class_notes/Advantages%20and%20disadvantages%20of%20GIS.docx HTTP/1.1" 200 15226
+WARNING 2025-11-04 11:51:50,726 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:50,734 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:55,140 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:55,150 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:56,329 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:56,337 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:57,169 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:57,177 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:57,386 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:57,392 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:57,635 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:57,657 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:57,823 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:57,829 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:58,030 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:58,037 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:58,290 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:58,312 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:58,458 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:58,467 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:58,699 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:58,723 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:58,892 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:58,913 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:59,040 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:59,049 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:59,210 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:59,221 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:51:59,425 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:51:59,433 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+WARNING 2025-11-04 11:52:01,069 log 10244 5376 Method Not Allowed (GET): /accounts/logout/
+WARNING 2025-11-04 11:52:01,077 basehttp 10244 5376 "GET /accounts/logout/ HTTP/1.1" 405 0
+INFO 2025-11-04 11:52:11,402 basehttp 10244 5376 "POST /toggle-dark-mode/ HTTP/1.1" 200 77
+INFO 2025-11-04 11:52:16,265 basehttp 10244 5376 "POST /toggle-dark-mode/ HTTP/1.1" 200 78
+INFO 2025-11-04 11:52:19,233 basehttp 10244 5376 "GET /profile/ HTTP/1.1" 200 45996
+INFO 2025-11-04 11:52:19,284 basehttp 10244 5376 "GET /media/profile_photos/WhatsApp_Image_2025-10-18_at_19.34.22_de518058.jpg HTTP/1.1" 200 56198
+INFO 2025-11-04 11:52:56,609 basehttp 10244 5376 "GET /activities/resources/ HTTP/1.1" 200 196097
+INFO 2025-11-04 11:53:46,849 basehttp 10244 5376 "POST /profile/ HTTP/1.1" 302 0
+INFO 2025-11-04 11:53:46,874 basehttp 10244 5376 "GET /profile/ HTTP/1.1" 200 45951
+INFO 2025-11-04 11:53:46,945 basehttp 10244 5376 "GET /media/profile_photos/.jpeg HTTP/1.1" 200 11156
+INFO 2025-11-04 11:53:58,270 basehttp 10244 5376 "GET / HTTP/1.1" 200 60150
+INFO 2025-11-04 11:54:06,017 basehttp 10244 5376 "GET /timetable/ HTTP/1.1" 200 55166
+INFO 2025-11-04 11:54:36,730 basehttp 10244 5376 "GET /timetable/ HTTP/1.1" 200 55166
+INFO 2025-11-04 13:26:51,860 basehttp 10244 21588 "GET /timetable/ HTTP/1.1" 200 55166
+INFO 2025-11-04 20:03:25,729 basehttp 10244 22236 "GET / HTTP/1.1" 200 58376
+INFO 2025-11-06 11:48:30,792 basehttp 10244 23848 "GET / HTTP/1.1" 200 58207
+INFO 2025-11-06 11:49:22,564 basehttp 10244 23848 "GET / HTTP/1.1" 200 58207
+INFO 2025-11-06 16:52:36,828 basehttp 10244 21472 "GET /activities/resources/?type=lecture HTTP/1.1" 200 194561
+INFO 2025-11-06 16:52:42,017 basehttp 10244 21472 "GET /profile/ HTTP/1.1" 200 45951
+INFO 2025-11-06 16:52:42,089 basehttp 10244 21472 "GET /media/profile_photos/.jpeg HTTP/1.1" 200 11156
+INFO 2025-11-06 16:52:58,015 basehttp 10244 21472 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-11-06 16:52:58,316 basehttp 10244 21472 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-11-06 16:53:17,042 basehttp 10244 21472 "POST /class-notes/launch-vscode/ HTTP/1.1" 200 56
+INFO 2025-11-06 17:26:41,377 basehttp 10244 28720 "GET / HTTP/1.1" 200 56429
+INFO 2025-11-08 09:53:41,230 basehttp 10244 1528 "GET / HTTP/1.1" 200 50507
+INFO 2025-11-09 20:19:32,977 basehttp 10244 77852 "GET / HTTP/1.1" 200 52291
+INFO 2025-11-10 17:06:10,288 basehttp 10244 72392 "GET / HTTP/1.1" 200 58221
+INFO 2025-11-10 18:07:20,616 basehttp 10244 54876 "GET /activities/resources/ HTTP/1.1" 200 194541
+INFO 2025-11-10 18:07:29,250 basehttp 10244 54876 "GET /profile/ HTTP/1.1" 200 45951
+INFO 2025-11-10 18:07:29,315 basehttp 10244 54876 "GET /media/profile_photos/.jpeg HTTP/1.1" 200 11156
+INFO 2025-11-10 18:07:34,229 basehttp 10244 54876 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-11-10 18:07:34,534 basehttp 10244 54876 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-11-10 18:07:41,407 basehttp 10244 54876 "GET / HTTP/1.1" 200 58221
+INFO 2025-11-13 12:53:42,667 autoreload 23428 13540 Watching for file changes with StatReloader
+INFO 2025-11-13 12:56:17,361 basehttp 23428 23476 "GET / HTTP/1.1" 200 58209
+WARNING 2025-11-13 12:56:38,346 log 23428 3660 Not Found: /favicon.ico
+WARNING 2025-11-13 12:56:38,348 basehttp 23428 3660 "GET /favicon.ico HTTP/1.1" 404 10319
+INFO 2025-11-14 20:24:19,644 autoreload 732 24376 Watching for file changes with StatReloader
+INFO 2025-11-14 20:25:27,609 basehttp 732 24524 "GET / HTTP/1.1" 200 56383
+WARNING 2025-11-14 20:25:36,797 log 732 24524 Not Found: /favicon.ico
+WARNING 2025-11-14 20:25:36,799 basehttp 732 24524 "GET /favicon.ico HTTP/1.1" 404 10319
+INFO 2025-11-17 12:05:56,531 basehttp 732 26876 "GET / HTTP/1.1" 200 58208
+INFO 2025-11-17 15:33:24,529 basehttp 732 6972 "GET /activities/resources/ HTTP/1.1" 200 194541
+INFO 2025-11-17 15:33:31,373 basehttp 732 6972 "GET /activities/ HTTP/1.1" 200 160533
+INFO 2025-11-17 15:33:33,899 basehttp 732 6972 "GET /profile/ HTTP/1.1" 200 45951
+INFO 2025-11-17 15:33:34,158 basehttp 732 6972 "GET /media/profile_photos/.jpeg HTTP/1.1" 200 11156
+INFO 2025-11-17 15:33:36,818 basehttp 732 6972 "GET /class-notes/ HTTP/1.1" 200 54078
+INFO 2025-11-17 15:33:37,247 basehttp 732 6972 "GET /class-notes/get-folder-content/?folder= HTTP/1.1" 200 280
+INFO 2025-11-17 15:33:39,517 basehttp 732 6972 "GET /profile/ HTTP/1.1" 200 45951
+INFO 2025-11-17 15:33:44,200 basehttp 732 6972 "GET / HTTP/1.1" 200 58194
+INFO 2025-11-17 18:06:21,929 basehttp 732 23792 "GET / HTTP/1.1" 200 58221
+INFO 2025-11-18 09:37:12,122 basehttp 732 38596 "GET / HTTP/1.1" 200 60171
+INFO 2025-11-18 19:14:51,642 basehttp 732 43132 "GET / HTTP/1.1" 302 0
+INFO 2025-11-18 19:14:51,819 basehttp 732 43132 "GET /accounts/login/?next=/ HTTP/1.1" 200 12385
+INFO 2025-11-18 19:14:57,315 basehttp 732 43132 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-18 19:14:58,144 basehttp 732 43132 "GET / HTTP/1.1" 200 58372
+INFO 2025-11-19 09:34:16,998 basehttp 732 2524 "GET / HTTP/1.1" 200 56217
+INFO 2025-11-19 12:00:24,414 basehttp 732 28640 "GET / HTTP/1.1" 200 56210

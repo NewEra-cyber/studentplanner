@@ -1,0 +1,229 @@
+/* -------------------------
+   Terminal/Hacker Theme
+   ------------------------- */
+:root {
+  --neon-green: #10b981;
+  --neon-blue: #60a5fa;
+  --neon-purple: #a855f7;
+  --neon-red: #ef4444;
+  --neon-yellow: #eab308;
+  --panel-bg: rgba(6,6,7,0.6);
+  --glass-bg: rgba(0,0,0,0.6);
+  --border-color: rgba(75,85,99,0.5);
+}
+
+/* Base page background */
+.terminal-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('https://www.zoomgroup.com/public/storage/images/courses/Linux-Administration-slider.webp');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  filter: brightness(0.36) saturate(0.9);
+}
+
+/* Hex overlay */
+.hex-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hex-overlay svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Terminal typography */
+.terminal-font {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+}
+
+.terminal-text {
+  color: #d1d5db;
+}
+
+.terminal-accent {
+  color: #10b981;
+}
+
+.terminal-header {
+  color: #10b981;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(16,185,129,0.3);
+}
+
+/* Glassmorphism panels */
+.glass-panel {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75,85,99,0.5);
+  border-radius: 12px;
+}
+
+.glass-card {
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(75,85,99,0.3);
+  border-radius: 8px;
+}
+
+/* Neon buttons */
+.btn-neon {
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #10b981;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background: rgba(16,185,129,0.2);
+  border-color: #10b981;
+  box-shadow: 0 0 15px rgba(16,185,129,0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary-neon {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: 1px solid #10b981;
+  color: black;
+  font-weight: 600;
+}
+
+.btn-primary-neon:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 0 20px rgba(16,185,129,0.6);
+}
+
+/* Activity type badges */
+.badge-lecture { background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); }
+.badge-lab { background: rgba(59,130,246,0.2); color: #93c5fd; border: 1px solid rgba(59,130,246,0.4); }
+.badge-workout { background: rgba(239,68,68,0.2); color: #fca5a5; border: 1px solid rgba(239,68,68,0.4); }
+.badge-meal { background: rgba(234,179,8,0.2); color: #fde047; border: 1px solid rgba(234,179,8,0.4); }
+.badge-skill { background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.4); }
+.badge-relationship { background: rgba(236,72,153,0.2); color: #f9a8d4; border: 1px solid rgba(236,72,153,0.4); }
+
+/* Progress bars */
+.progress-terminal {
+  background: rgba(75,85,99,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-terminal-fill {
+  background: linear-gradient(90deg, #10b981, #60a5fa);
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+/* Weather widgets */
+.weather-sunny { background: linear-gradient(135deg,#FFD86B 0%, #FFB86B 40%, #FF7A18 100%); color: #0b1220; }
+.weather-rain { background: linear-gradient(135deg,#4b6cb7 0%, #182848 100%); color: #f0f9ff; }
+.weather-cloudy { background: linear-gradient(135deg,#757F9A 0%, #D7DDE8 100%); color: #0b1220; }
+.weather-storm { background: linear-gradient(135deg,#252525 0%, #373B44 100%); color: #f8fafc; }
+.weather-snow { background: linear-gradient(135deg,#E6F0FF 0%, #BEE7FF 100%); color: #0f172a; }
+.weather-fog { background: linear-gradient(135deg,#BDC3C7 0%, #2C3E50 100%); color: #0f172a; }
+.weather-default { background: linear-gradient(135deg,#0f172a 0%, #0f172a 100%); color: #c7f9d6; }
+
+/* Resource cards */
+.resource-card-terminal {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(75,85,99,0.3);
+  border-left: 4px solid #10b981;
+  transition: all 0.3s ease;
+}
+
+.resource-card-terminal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16,185,129,0.15);
+  border-color: rgba(16,185,129,0.5);
+}
+
+/* Form styles for terminal theme */
+.terminal-input {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(75,85,99,0.5);
+  color: #d1d5db;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.terminal-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.1);
+  outline: none;
+}
+
+.terminal-select {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(75,85,99,0.5);
+  color: #d1d5db;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.terminal-textarea {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(75,85,99,0.5);
+  color: #d1d5db;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  resize: vertical;
+}
+
+/* Table styles */
+.terminal-table {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(75,85,99,0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.terminal-table th {
+  background: rgba(16,185,129,0.1);
+  color: #10b981;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(75,85,99,0.3);
+}
+
+.terminal-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(75,85,99,0.2);
+  color: #d1d5db;
+}
+
+.terminal-table tr:hover {
+  background: rgba(16,185,129,0.05);
+}
+
+/* Status messages */
+.status-success {
+  background: rgba(16,185,129,0.9);
+  color: black;
+  border: 1px solid #10b981;
+}
+
+.status-error {
+  background: rgba(239,68,68,0.9);
+  color: white;
+  border: 1px solid #ef4444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hex-overlay {
+    height: 160px;
+  }
+  
+  .glass-panel {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
